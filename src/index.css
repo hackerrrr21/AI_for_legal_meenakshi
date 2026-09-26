@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f6fbf5] text-[#181d1a];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Universal Accessible Focus Indicators (WCAG 2.4.7 Focus Visible) */
+  :focus-visible {
+    outline: 2px solid #1b382b !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* 1. Screen Reader Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* 2. Text Scaling Utilities */
+.text-scale-default {
+  font-size: 100%;
+}
+
+.text-scale-large {
+  font-size: 115% !important;
+}
+
+.text-scale-xlarge {
+  font-size: 130% !important;
+}
+
+/* 3. High Contrast Mode (WCAG AAA 7.0:1+) */
+.high-contrast-mode {
+  filter: contrast(120%);
+}
+
+.high-contrast-mode body,
+.high-contrast-mode p,
+.high-contrast-mode span,
+.high-contrast-mode label {
+  color: #000000 !important;
+}
+
+.high-contrast-mode div,
+.high-contrast-mode section,
+.high-contrast-mode article {
+  border-color: #000000 !important;
+}
+
+.high-contrast-mode button {
+  border: 1px solid #000000 !important;
+}
+
+/* 4. Dyslexia-Friendly Mode (Increased spacing & line-height) */
+.dyslexia-friendly-mode body,
+.dyslexia-friendly-mode p,
+.dyslexia-friendly-mode div,
+.dyslexia-friendly-mode span {
+  letter-spacing: 0.04em !important;
+  word-spacing: 0.1em !important;
+  line-height: 1.85 !important;
+}
+
+/* 5. Reduced Motion (WCAG 2.3.3 Animation from Interactions) */
+.reduce-motion-mode *,
+.reduce-motion-mode *::before,
+.reduce-motion-mode *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbars for clean contract reading */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
