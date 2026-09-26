@@ -13,14 +13,14 @@ interface Screen23_LegalDisclaimerProps {
 export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> = ({
   onNavigate,
   userProfile: _userProfile = {
-    name: "Eleanor Vance, Esq.",
-    role: "Senior Partner, Chancery Practice",
-    avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
+    name: "Priya Sharma",
+    role: "Citizen / Legal Consumer",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
   },
   onQuickLoadSample: _onQuickLoadSample}) => {
   return (
     <div className="w-full bg-surface text-on-surface antialiased min-h-screen">
-      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Meridian Corp vs. Vantage</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Docket #2024-CV-88219</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)">Overview</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)">Briefing Assistant</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)">Clause Analysis</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)">Precedent Vault</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('legal-articles-updates')} href="javascript:void(0)">Legal Articles &amp; Updates</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)">Court Filings</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)">Find Counsel &amp; Co-Counsel</a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
+      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Citizen Legal Knowledge Base</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Corpus Ref #IN-CON-2026</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)">Overview</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)">Briefing Assistant</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)">Clause Analysis</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)">Precedent Vault</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('legal-articles-updates')} href="javascript:void(0)">Legal Articles &amp; Updates</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)">Court Filings</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)">Find Counsel &amp; Co-Counsel</a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
 {/*  Top Governance Masthead & Breadcrumb  */}
 <section className="w-full bg-surface-container-low px-gutter py-space-xl">
 <div className="max-w-7xl mx-auto flex flex-col gap-space-md">
@@ -30,7 +30,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 <span className="material-symbols-outlined text-[13px] text-outline">chevron_right</span>
 <span className="font-label-sm text-label-sm uppercase tracking-wider">Compliance, Privacy &amp; Platform Governance</span>
 <span className="material-symbols-outlined text-[13px] text-outline">chevron_right</span>
-<span className="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary">Protocol &amp; Ethics Specification (ABA / SOC-2 / Rule 1.6)</span>
+<span className="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary">Protocol &amp; Ethics Specification (DPDP Act 2023 / Bar Council / IT Act 2000)</span>
 </div>
 {/*  Main Headline Block with Asymmetric Layout  */}
 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg pt-space-xs">
@@ -71,7 +71,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 <div className="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-0.5">
 <span className="font-label-sm text-label-sm text-secondary uppercase font-semibold">Tenant Enclave Key</span>
 <span className="font-label-lg text-label-lg text-primary font-semibold">AWS FIPS 140-2 Level 3</span>
-<span className="font-body-sm text-body-sm text-on-surface-variant">Meridian Assigned HSM: #HSM-9912</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant">AdvoChat Assigned HSM: #HSM-9912</span>
 </div>
 <div className="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-0.5">
 <span className="font-label-sm text-label-sm text-secondary uppercase font-semibold">LLM Retention Policy</span>
@@ -99,7 +99,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <div className="hidden md:flex items-center gap-space-xs text-secondary font-label-sm text-label-sm shrink-0">
 <span className="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
-<span>Counsel Shell: Eleanor Vance, Esq. (Meridian Corp)</span>
+<span>Active Session: Priya Sharma (Citizen Client Enclave)</span>
 </div>
 </div>
 </nav>
@@ -142,12 +142,12 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <h3 className="font-headline-sm text-headline-sm text-primary">Precedent Indexing</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Hybrid vector retrieval matches clauses against Delaware General Corporation Law (DGCL), DRULPA, Restatements of Contracts, and Bloomberg Law primary source reporters without hallucinated citations.
+              Hybrid vector retrieval matches clauses against Indian General Corporation Law (Indian Contract Act), Rent Control Act, Restatements of Contracts, and Bloomberg Law primary source reporters without hallucinated citations.
             </p>
 </div>
 <div className="mt-space-md pt-space-xs flex items-center justify-between text-secondary font-label-sm text-label-sm">
 <span>Primary Sources</span>
-<span className="font-semibold text-primary">Delaware Chancery</span>
+<span className="font-semibold text-primary">Indian Civil Courts</span>
 </div>
 </div>
 {/*  Step 3  */}
@@ -193,7 +193,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <div>
 <h4 className="font-headline-sm text-headline-sm text-primary">Cryptographic Air-Gap Proof Between Matters</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Meridian Corp vs. Vantage (Docket #2024-CV-88219) tokens are isolated inside a dedicated tenant enclave. Memory pools are flushed upon session termination.</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Citizen Legal Knowledge Base (Corpus Ref #IN-CON-2026) tokens are isolated inside a dedicated tenant enclave. Memory pools are flushed upon session termination.</p>
 </div>
 </div>
 <div className="flex items-center gap-space-sm shrink-0">
@@ -219,7 +219,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <h3 className="font-headline-sm text-headline-sm text-primary">Zero Hallucination Quorum</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-            Dual-quorum verification requires explicit statutory or case reporter citations (e.g., <span className="italic font-headline-sm text-body-sm">Ainslie v. Cantor Fitzgerald L.P., Del. 2024</span>) for every legal deduction. Unanchored claims trigger automatic confidence demotion.
+            Dual-quorum verification requires explicit statutory or case reporter citations (e.g., <span className="italic font-headline-sm text-body-sm">Percept D'Mark v. Zaheer Khan (2006) 4 SCC 227 or Section 106 TP Act</span>) for every legal deduction. Unanchored claims trigger automatic confidence demotion.
           </p>
 <div className="mt-auto pt-space-xs">
 <span className="font-label-sm text-label-sm text-tertiary-container font-semibold">Quorum Threshold: 99.8% Anchor Confidence</span>
@@ -261,7 +261,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
             Automated audits identify unconscionable arbitration requirements, unilateral fee-shifting provisions, and overbroad non-compete covenants across employment and merger transactions.
           </p>
 <div className="mt-auto pt-space-xs">
-<span className="font-label-sm text-label-sm text-secondary font-semibold">FTC &amp; Chancery Equity Parity Rules</span>
+<span className="font-label-sm text-label-sm text-secondary font-semibold">Advocates Act 1961 &amp; DPDP 2023 Rules</span>
 </div>
 </div>
 {/*  Tenet 5  */}
@@ -271,7 +271,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <h3 className="font-headline-sm text-headline-sm text-primary">Cryptographic Non-Training Covenant</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-            Matter filings, discovery batches, and chat turns are strictly walled. Neither base foundation models nor downstream fine-tuned instances ingest Meridian client communications.
+            Matter filings, discovery batches, and chat turns are strictly walled. Neither base foundation models nor downstream fine-tuned instances ingest AdvoChat client communications.
           </p>
 <div className="mt-auto pt-space-xs">
 <span className="font-label-sm text-label-sm text-on-primary-container font-semibold">Zero Fine-Tuning Ingestion Policy</span>
@@ -282,7 +282,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 <div className="flex flex-col gap-space-xs">
 <span className="font-label-sm text-label-sm text-secondary uppercase font-semibold">Current Accuracy Score</span>
 <div className="font-display-md text-display-md text-primary">99.98%</div>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Citation verification index across 4.2 million judicial opinions in the Delaware, Second, and Federal Circuits.</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Citation verification index across 4.2 million judicial opinions in the Indian, Second, and Federal Circuits.</p>
 </div>
 <div className="pt-space-md">
 <a className="inline-flex items-center gap-space-xs font-label-md text-label-md text-primary hover:underline" href="javascript:void(0)">
@@ -319,7 +319,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 <p className="font-body-sm text-body-sm text-on-surface">"A lawyer shall make reasonable efforts to prevent the inadvertent or unauthorized disclosure of, or unauthorized access to, information relating to the representation of a client."</p>
 </div>
 <div className="p-space-sm rounded bg-surface-container-low flex flex-col gap-0.5">
-<span className="font-label-sm text-label-sm text-secondary font-semibold">Delaware Supreme Court Rule 64</span>
+<span className="font-label-sm text-label-sm text-secondary font-semibold">Indian Supreme Court Rule 64</span>
 <p className="font-body-sm text-body-sm text-on-surface">Enforces heightened diligence regarding digital evidentiary repositories and non-discoverable litigation strategy notes.</p>
 </div>
 </div>
@@ -361,7 +361,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <div className="pt-space-lg mt-space-md flex items-center justify-between">
 <div>
-<div className="font-label-sm text-label-sm text-on-primary-container">Key State for Meridian Corp</div>
+<div className="font-label-sm text-label-sm text-on-primary-container">Key State for Citizen Client</div>
 <div className="font-label-lg text-label-lg font-mono">0x44F9...E912</div>
 </div>
 <button className="px-space-sm py-1 rounded bg-surface text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors" type="button">
@@ -431,7 +431,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 <span className="material-symbols-outlined text-primary text-[24px]">delete_forever</span>
 <div>
 <div className="font-label-lg text-label-lg text-primary font-semibold">Immediate On-Demand Matter Purge Routine</div>
-<div className="font-body-sm text-body-sm text-on-surface-variant">Instantly overwrite all cache blocks, vector indices, and chat histories for Docket #2024-CV-88219.</div>
+<div className="font-body-sm text-body-sm text-on-surface-variant">Instantly overwrite all cache blocks, vector indices, and chat histories for Corpus Ref #IN-CON-2026.</div>
 </div>
 </div>
 <button className="px-space-md py-space-xs rounded bg-surface-container-lowest text-error font-label-md text-label-md font-semibold hover:bg-error-container transition-colors shrink-0 shadow-sm" type="button">
@@ -464,7 +464,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 <div className="flex flex-col gap-space-xs">
 <h3 className="font-headline-sm text-headline-sm text-primary">Non-Creation of Attorney-Client Relationship</h3>
 <p className="text-on-surface-variant font-body-sm text-body-sm">
-                No interaction with the AdvoChat platform, including the generation of motion drafts, synthesis of Delaware Chancery precedents, or analysis of contractual indemnity clauses, shall create an attorney-client relationship between AdvoChat Technologies LLC (or its employees) and any user, enterprise client, or represented litigant. Communications through AdvoChat are not covered by an attorney-client relationship directly with the platform provider, although client confidentiality is technically safeguarded as outlined under Section 03.
+                No interaction with the AdvoChat platform, including the generation of motion drafts, synthesis of Indian Civil Courts precedents, or analysis of contractual indemnity clauses, shall create an attorney-client relationship between AdvoChat Technologies LLC (or its employees) and any user, enterprise client, or represented litigant. Communications through AdvoChat are not covered by an attorney-client relationship directly with the platform provider, although client confidentiality is technically safeguarded as outlined under Section 03.
               </p>
 </div>
 <div className="flex flex-col gap-space-xs">
@@ -509,12 +509,12 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <h3 className="font-headline-sm text-headline-sm text-primary">24/7 Priority Docket Hotline</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Immediate voice escalation for active trial teams with impending filing deadlines in Chancery, Federal Circuit, or SDNY matters.
+              Immediate voice escalation for active trial teams with impending filing deadlines in High Court or Consumer Dispute matters.
             </p>
 <div className="mt-space-sm font-headline-md text-headline-md text-primary font-mono font-semibold">
               +1 (800) 555-ADVO
             </div>
-<span className="font-label-sm text-label-sm text-secondary">PIN: #MERIDIAN-88219 (Priority Route)</span>
+<span className="font-label-sm text-label-sm text-secondary">PIN: #ADVOCHAT-2026 (Priority Route)</span>
 </div>
 <div className="pt-space-md">
 <span className="inline-flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
@@ -555,7 +555,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 </div>
 <h3 className="font-headline-sm text-headline-sm text-primary">Marcus Thorne, J.D.</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Legal Technology Director assigned to the Meridian Technologies account. Former Delaware Chancery law clerk.
+              Legal Technology Director assigned to the Client Enclave account. Former Indian Civil Courts law clerk.
             </p>
 <div className="mt-space-sm flex flex-col gap-0.5 text-secondary font-label-sm text-label-sm">
 <span>Direct: +1 (212) 555-0194</span>
@@ -603,7 +603,7 @@ export const Screen23_LegalDisclaimer: React.FC<Screen23_LegalDisclaimerProps> =
 <span className="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div className="mt-space-sm pt-space-xs text-on-surface-variant font-body-md text-body-md">
-            AdvoChat maintains an active webhook listener with Federal, Appellate, and Delaware judicial dockets. When a precedential decision is modified, vacated, or granted en banc review, the corresponding knowledge graph nodes are immediately tagged with warning flags in your Briefing Assistant, preventing reliance on negative authority.
+            AdvoChat maintains an active webhook listener with Federal, Appellate, and Indian judicial dockets. When a precedential decision is modified, vacated, or granted en banc review, the corresponding knowledge graph nodes are immediately tagged with warning flags in your Briefing Assistant, preventing reliance on negative authority.
           </div>
 </details>
 {/*  FAQ 3  */}

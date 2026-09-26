@@ -13,14 +13,14 @@ interface Screen21_SettingsProps {
 export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
   onNavigate,
   userProfile: _userProfile = {
-    name: "Eleanor Vance, Esq.",
-    role: "Senior Partner, Chancery Practice",
-    avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
+    name: "Priya Sharma",
+    role: "Citizen / Legal Consumer",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
   },
   onQuickLoadSample: _onQuickLoadSample}) => {
   return (
     <div className="w-full bg-surface text-on-surface antialiased min-h-screen">
-      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Meridian Corp vs. Vantage</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Docket #2024-CV-88219</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)">Overview</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)">Briefing Assistant</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)">Clause Analysis</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)">Precedent Vault</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('legal-articles-updates')} href="javascript:void(0)">Legal Articles &amp; Updates</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)">Court Filings</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)">Find Counsel &amp; Co-Counsel</a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
+      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Citizen Legal Knowledge Base</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Corpus Ref #IN-CON-2026</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)">Overview</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)">Briefing Assistant</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)">Clause Analysis</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)">Precedent Vault</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('legal-articles-updates')} href="javascript:void(0)">Legal Articles &amp; Updates</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)">Court Filings</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)">Find Counsel &amp; Co-Counsel</a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
 {/*  Top Command Header / Breadcrumbs & Actions  */}
 <div className="px-margin py-space-lg bg-surface-container-low shadow-sm">
 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
@@ -37,7 +37,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
           Settings &amp; System Governance
         </h1>
 <p className="font-body-md text-body-md text-on-surface-variant max-w-3xl">
-          Manage counsel identity, ethical firewall security, statutory privilege safeguards, notification dispatches, and evidentiary archive lifecycle under ABA Rule 1.6 &amp; Formal Opinion 477R.
+          Manage counsel identity, ethical firewall security, statutory privilege safeguards, notification dispatches, and evidentiary archive lifecycle under Digital Personal Data Protection (DPDP) Act 2023 &amp; Advocates Act 1961.
         </p>
 </div>
 {/*  Action Cluster  */}
@@ -156,7 +156,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <h2 className="font-headline-md text-headline-md text-primary font-semibold">Account &amp; Counsel Credentials</h2>
 <span className="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase font-semibold">Verified</span>
 </div>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Bar-associated credentials certified with the Delaware Supreme Court &amp; New York Bar.</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Bar-associated credentials certified with the Indian Supreme Court &amp; New York Bar.</p>
 </div>
 <span className="font-label-sm text-label-sm text-secondary font-mono">ENCLAVE-ID: DE-88219-JV</span>
 </div>
@@ -181,7 +181,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 </label>
 <div className="flex items-center rounded bg-surface-container-low px-space-md py-2.5">
 <span className="material-symbols-outlined text-secondary text-[18px] mr-2">mail</span>
-<input className="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none" readOnly={true} type="email" value="j.vance@meridiancorp-law.com"/>
+<input className="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none" readOnly={true} type="email" value="priya.sharma@example.in"/>
 <span className="material-symbols-outlined text-secondary text-[18px]">lock</span>
 </div>
 </div>
@@ -190,7 +190,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <label className="font-label-md text-label-md font-semibold text-on-surface">Organization / Corporate Legal Dept.</label>
 <div className="flex items-center rounded bg-surface-container px-space-md py-2.5">
 <span className="material-symbols-outlined text-secondary text-[18px] mr-2">corporate_fare</span>
-<input className="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none" type="text" value="Meridian Technologies — Legal &amp; Regulatory Enclave"/>
+<input className="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none" type="text" value="Client Enclave — Legal &amp; Regulatory Enclave"/>
 </div>
 </div>
 {/*  Field: Role  */}
@@ -208,7 +208,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <span className="material-symbols-outlined text-primary text-[24px]">gavel</span>
 <div className="flex flex-col">
 <span className="font-label-md text-label-md font-semibold text-on-surface">Active Bar Affiliations</span>
-<span className="font-body-sm text-body-sm text-on-surface-variant">Delaware Supreme Court (#48102 Active) • NY Appellate Div. 1st Dept (Reciprocal #55194)</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant">Indian Supreme Court (#48102 Active) • NY Appellate Div. 1st Dept (Reciprocal #55194)</span>
 </div>
 </div>
 <button className="px-space-md py-1.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm hover:bg-surface-container transition-all whitespace-nowrap" type="button">
@@ -236,7 +236,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <h2 className="font-headline-md text-headline-md text-primary font-semibold">Notifications &amp; Docket Dispatches</h2>
 <span className="font-label-sm text-label-sm text-secondary">Encrypted SMTP + Push API</span>
 </div>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Real-time statutory alerting for Delaware Court of Chancery, SDNY, and Federal Circuit dockets.</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Real-time statutory alerting for Indian Civil Courts &amp; High Courts, SDNY, and Federal Circuit dockets.</p>
 </div>
 {/*  Notification Switch Table  */}
 <div className="flex flex-col gap-space-xs">
@@ -245,7 +245,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <div className="flex items-start gap-space-md">
 <span className="material-symbols-outlined text-primary text-[22px] mt-0.5">notification_important</span>
 <div className="flex flex-col">
-<span className="font-label-lg text-label-lg text-on-surface font-medium">Chancery Slip Opinions &amp; Emergency Injunctions</span>
+<span className="font-label-lg text-label-lg text-on-surface font-medium">High Court &amp; Consumer Forum Landmark Orders</span>
 <span className="font-body-sm text-body-sm text-on-surface-variant">Immediate SMS &amp; TLS 1.3 encrypted email dispatch on bench orders.</span>
 </div>
 </div>
@@ -259,8 +259,8 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <div className="flex items-start gap-space-md">
 <span className="material-symbols-outlined text-primary text-[22px] mt-0.5">balance</span>
 <div className="flex flex-col">
-<span className="font-label-lg text-label-lg text-on-surface font-medium">Active Matter Filings: Meridian Corp vs. Vantage</span>
-<span className="font-body-sm text-body-sm text-on-surface-variant">Instant notification upon electronic docket entries (Docket #2024-CV-88219).</span>
+<span className="font-label-lg text-label-lg text-on-surface font-medium">Active Matter Filings: Citizen Legal Knowledge Base</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant">Instant notification upon electronic docket entries (Corpus Ref #IN-CON-2026).</span>
 </div>
 </div>
 <label className="relative inline-flex items-center cursor-pointer">
@@ -301,7 +301,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <div className="flex items-start gap-space-md">
 <span className="material-symbols-outlined text-secondary text-[22px] mt-0.5">newspaper</span>
 <div className="flex flex-col">
-<span className="font-label-lg text-label-lg text-on-surface font-medium">Delaware Chancery Friday Morning Gazette</span>
+<span className="font-label-lg text-label-lg text-on-surface font-medium">Indian Civil Courts Friday Morning Gazette</span>
 <span className="font-body-sm text-body-sm text-on-surface-variant">Weekly digest of corporate law jurisprudence, fiduciary opinions, and Rule 23 rulings.</span>
 </div>
 </div>
@@ -323,7 +323,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <label className="font-label-md text-label-md font-semibold text-on-surface">Primary Interface &amp; Citation Engine</label>
 <div className="relative">
 <select className="w-full appearance-none rounded bg-surface-container px-space-md py-2.5 font-body-md text-body-md text-on-surface focus:outline-none cursor-pointer pr-10">
-<option >English (US — Delaware Chancery Legal Format)</option>
+<option >English (US — Indian Civil Courts Legal Format)</option>
 <option>English (US — Federal Second Circuit / SDNY)</option>
 <option>English (UK — Commercial Court / CPR Part 31)</option>
 <option>French (Civil Code / Paris Commercial Tribunal)</option>
@@ -339,7 +339,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <select className="w-full appearance-none rounded bg-surface-container px-space-md py-2.5 font-body-md text-body-md text-on-surface focus:outline-none cursor-pointer pr-10">
 <option >The Bluebook: Uniform System of Citation (21st Ed.)</option>
 <option>ALWD Guide to Legal Citation (7th Ed.)</option>
-<option>Delaware Chancery Court Operating Rule 107 Standard</option>
+<option>Indian Civil Courts Court Operating Rule 107 Standard</option>
 <option>California Style Manual (4th Ed.)</option>
 </select>
 <span className="material-symbols-outlined absolute right-3 top-3 text-secondary pointer-events-none text-[18px]">unfold_more</span>
@@ -350,7 +350,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <label className="font-label-md text-label-md font-semibold text-on-surface">Statutory Jurisdictional Time Zone</label>
 <div className="flex items-center rounded bg-surface-container px-space-md py-2.5">
 <span className="material-symbols-outlined text-secondary text-[18px] mr-2">schedule</span>
-<input className="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none" readOnly={true} type="text" value="America/New_York (EST / EDT) — Wilmington Chancery Operating Clock"/>
+<input className="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none" readOnly={true} type="text" value="America/New_York (EST / EDT) — Indian Standard Time (IST) — Courts Operating Hours"/>
 <span className="font-label-sm text-label-sm text-primary font-mono font-semibold">SYNCHRONIZED</span>
 </div>
 <span className="font-label-sm text-label-sm text-secondary">Crucial for statute of limitations and 23:59:59 PM EST electronic filing cutoffs.</span>
@@ -535,7 +535,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 <span>CoCounsel®</span>
 </div>
 </div>
-<span className="font-label-sm text-label-sm text-secondary mt-1">DMS tokens are authenticated through Meridian Corporate Okta.</span>
+<span className="font-label-sm text-label-sm text-secondary mt-1">DMS tokens are authenticated through Citizen Clientorate Okta.</span>
 </div>
 </div>
 {/*  Manual Emergency Actions  */}
@@ -569,7 +569,7 @@ export const Screen21_Settings: React.FC<Screen21_SettingsProps> = ({
 </div>
 <div className="flex flex-col">
 <div className="flex items-center gap-2">
-<span className="font-label-md text-label-md text-on-surface font-semibold">Wilmington Chancery Chambers Station (macOS Safari 18.1)</span>
+<span className="font-label-md text-label-md text-on-surface font-semibold">Secure Browser Session (Citizen Enclave)</span>
 <span className="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm uppercase font-semibold">Current Session</span>
 </div>
 <span className="font-body-sm text-body-sm text-on-surface-variant font-mono text-[12px]">IP: 198.51.100.24 • TLS 1.3 • FIDO2 Hardware Session Authenticated</span>

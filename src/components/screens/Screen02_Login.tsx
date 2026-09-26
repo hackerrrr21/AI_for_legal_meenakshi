@@ -28,25 +28,25 @@ export const Screen02_Login: React.FC<Screen02LoginProps> = ({
 
   const demoPersonas = [
     {
-      name: "John Doe",
-      role: "Citizen Legal Help Account",
-      email: "john@example.com",
-      barId: "Client-8841",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=128"
+      name: "Priya Sharma",
+      role: "Citizen / Legal Consumer",
+      email: "priya.sharma@example.in",
+      barId: "Citizen-Tenancy-2026",
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
     },
     {
-      name: "Eleanor Vance, Esq.",
-      role: "Senior Partner, Chancery Practice",
-      email: "vance@vancestanding.law",
-      barId: "DE-489102",
-      avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
-    },
-    {
-      name: "Marcus Chen",
-      role: "Tech Contractor & Specialist",
-      email: "marcus@chenengineering.com",
-      barId: "Client-4412",
+      name: "Rohan Mehta",
+      role: "SME Founder / Tech Employee",
+      email: "rohan.mehta@example.in",
+      barId: "Founder-Contracts-2026",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=128"
+    },
+    {
+      name: "Adv. Rajesh Verma",
+      role: "High Court & Legal Aid Advocate",
+      email: "adv.verma@delhibar.org",
+      barId: "BCI/D/2014/1908",
+      avatar: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=256"
     }
   ];
 

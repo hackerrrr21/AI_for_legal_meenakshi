@@ -16,9 +16,9 @@ interface Screen12_LawLibraryProps {
 export const Screen12_LawLibrary: React.FC<Screen12_LawLibraryProps> = ({
   onNavigate,
   userProfile: _userProfile = {
-    name: "Eleanor Vance, Esq.",
-    role: "Senior Partner, Chancery Practice",
-    avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
+    name: "Priya Sharma",
+    role: "Citizen / Legal Consumer",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
   },
   userXP = 450,
   streakDays = 12,
@@ -126,7 +126,7 @@ export const Screen12_LawLibrary: React.FC<Screen12_LawLibraryProps> = ({
         <div className="flex flex-col gap-space-lg">
           <div className="px-space-sm pt-space-xs">
             <div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div>
-            <div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Meridian India vs. Vantage</div>
+            <div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Citizen Legal Knowledge Base</div>
             <div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">High Court of Delhi • #2024-HC-88219</div>
           </div>
           <div className="flex flex-col gap-space-xs">

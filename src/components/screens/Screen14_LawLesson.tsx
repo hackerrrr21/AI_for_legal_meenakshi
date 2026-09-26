@@ -13,9 +13,9 @@ interface Screen14_LawLessonProps {
 export const Screen14_LawLesson: React.FC<Screen14_LawLessonProps> = ({
   onNavigate,
   userProfile: _userProfile = {
-    name: "Eleanor Vance, Esq.",
-    role: "Senior Partner, Chancery Practice",
-    avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
+    name: "Priya Sharma",
+    role: "Citizen / Legal Consumer",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
   },
   onQuickLoadSample: _onQuickLoadSample}) => {
   const [activePhase, setActivePhase] = useState<number>(1);
@@ -28,7 +28,7 @@ export const Screen14_LawLesson: React.FC<Screen14_LawLessonProps> = ({
         <div className="flex flex-col gap-space-lg">
           <div className="px-space-sm pt-space-xs">
             <div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div>
-            <div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Meridian India vs. Vantage</div>
+            <div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Citizen Legal Knowledge Base</div>
             <div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">High Court of Delhi • #2024-HC-88219</div>
           </div>
           <div className="flex flex-col gap-space-xs">
@@ -97,7 +97,7 @@ export const Screen14_LawLesson: React.FC<Screen14_LawLessonProps> = ({
                         <span className="font-label-sm text-label-sm text-secondary font-semibold uppercase">Active Case Impact</span>
                       </div>
                       <span className="font-label-md text-label-md text-on-surface font-semibold truncate max-w-[210px]">
-                        Meridian India vs. Vantage
+                        Citizen Legal Knowledge Base
                       </span>
                       <span className="font-label-sm text-label-sm text-tertiary font-medium">
                         Clause 4.2 Non-Compete Invalidation
@@ -307,7 +307,7 @@ export const Screen14_LawLesson: React.FC<Screen14_LawLessonProps> = ({
                         <tr>
                           <td className="p-3 font-semibold text-on-surface">Equity / Distribution Forfeiture</td>
                           <td className="p-3 text-error font-semibold">VOID as In Terrorem Penalty</td>
-                          <td className="p-3 text-secondary">Scrutinized under Ainslie Test</td>
+                          <td className="p-3 text-secondary">Strictly Void under Section 27 Indian Contract Act</td>
                           <td className="p-3 font-mono text-[12px]">Section 74 ICA / Section 27</td>
                         </tr>
                       </tbody>
@@ -363,11 +363,11 @@ export const Screen14_LawLesson: React.FC<Screen14_LawLessonProps> = ({
                     <div className="flex items-center gap-2">
                       <span className="material-symbols-outlined text-primary text-[22px]">gavel</span>
                       <h3 className="font-headline-sm text-headline-sm text-primary font-semibold">
-                        Application to Meridian India Clause 4.2
+                        Application to Employment Non-Compete Clauses
                       </h3>
                     </div>
                     <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                      In the dispute before the Delhi High Court, Defendant Vantage claims that Clause 4.2's 24-month non-compete is enforceable because Dr. Chen accepted equity compensation. Under <em>Percept D'Mark v. Zaheer Khan</em>, this claim will fail decisively: payment of compensation does not validate a void restraint of trade, and Section 27 strictly protects Dr. Chen's Article 19(1)(g) constitutional freedom.
+                      In the dispute before the Delhi High Court, Defendant Landlord claims that Clause 4.2's 24-month non-compete is enforceable because Dr. Chen accepted equity compensation. Under <em>Percept D'Mark v. Zaheer Khan</em>, this claim will fail decisively: payment of compensation does not validate a void restraint of trade, and Section 27 strictly protects Dr. Chen's Article 19(1)(g) constitutional freedom.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-space-sm pt-space-xs">

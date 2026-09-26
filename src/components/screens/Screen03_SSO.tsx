@@ -68,20 +68,20 @@ export const Screen03_SSO: React.FC<Screen03SSOProps> = ({ onConfirmSSO, onCance
           <div className="w-full bg-[#f0f5f0] rounded-lg p-4 mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-[#e2ddd5]">
             <div className="flex items-center gap-3">
               <img
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
-                alt="Eleanor Vance, Esq."
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
+                alt="Priya Sharma"
                 className="w-12 h-12 rounded-full object-cover border-2 border-[#1b382b]"
               />
               <div>
-                <div className="font-serif font-bold text-sm text-[#181d1a]">Eleanor Vance, Esq.</div>
-                <div className="text-xs text-[#506358]">vance@vancestanding.law</div>
-                <div className="text-[10px] text-[#82a291] font-mono mt-0.5">Firm: Vance & Standing LLP • Wilmington DE</div>
+                <div className="font-serif font-bold text-sm text-[#181d1a]">Priya Sharma</div>
+                <div className="text-xs text-[#506358]">priya.sharma@example.in</div>
+                <div className="text-[10px] text-[#82a291] font-mono mt-0.5">Citizen Account • Verified Enclave (DPDP Act 2023)</div>
               </div>
             </div>
 
             <div className="px-2.5 py-1 bg-white rounded border border-[#c2c8c2] text-[10px] font-mono font-bold text-[#1b382b] flex items-center gap-1">
               <StitchIcon name="verified" className="text-[14px] text-[#2d6a4f]" />
-              <span>BAR VERIFIED</span>
+              <span>DPDP VERIFIED</span>
             </div>
           </div>
 

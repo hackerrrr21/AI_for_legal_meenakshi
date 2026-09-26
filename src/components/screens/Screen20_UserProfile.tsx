@@ -14,8 +14,8 @@ interface Screen20_UserProfileProps {
 export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
   onNavigate,
   userProfile = {
-    name: "Julian Vance, Esq.",
-    role: "Corporate Counsel & Senior VP Regulatory Affairs",
+    name: "Priya Sharma",
+    role: "Citizen / Legal Consumer",
     avatar: "https://lh3.googleusercontent.com/aida/AEtjO1VZ6niDg1iYJjzr8mamLG9LUlOY0DheFbkbsj_qFZ_em-hwpS5pR8HxexUHNsxBUU1KbvoavawfJL7Kqr2SGC8nvYMB8p59tFnVkvnMjxP9m-dFrwqWag5quL6TKHeF9gLmB4Wjv_lgfjRu7ikPMOxecC93rpNQMrES01oEIGgdvp3ZatJuZXkL_LW-DVh1rWd3hPSNvL5uJH5h2Xn8HBhTSGpaLeYgjNGwiZXPZXqP_ZCroml37gUCOw9i"
   },
   onQuickLoadSample: _onQuickLoadSample}) => {
@@ -25,13 +25,13 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
 
   // Editable Profile State
   const [profileData, setProfileData] = useState({
-    name: userProfile.name || "Julian Vance, Esq.",
-    title: "Corporate Counsel & Senior VP Regulatory Affairs",
-    organization: "Meridian Technologies",
-    barNumber: "Bar #48102 (Delaware Supreme Court)",
-    email: "j.vance@meridiancorp-law.com",
-    phone: "+1 (302) 884-2900",
-    location: "Wilmington, Delaware",
+    name: userProfile.name || "Priya Sharma",
+    title: "Citizen / Legal Consumer",
+    organization: "Legal Assistance Account",
+    barNumber: "Client Enclave (DPDP Act 2023 Verified)",
+    email: "priya.sharma@example.in",
+    phone: "+91 98765 43210",
+    location: "Bengaluru, Karnataka, India",
     avatar: userProfile.avatar || "https://lh3.googleusercontent.com/aida/AEtjO1VZ6niDg1iYJjzr8mamLG9LUlOY0DheFbkbsj_qFZ_em-hwpS5pR8HxexUHNsxBUU1KbvoavawfJL7Kqr2SGC8nvYMB8p59tFnVkvnMjxP9m-dFrwqWag5quL6TKHeF9gLmB4Wjv_lgfjRu7ikPMOxecC93rpNQMrES01oEIGgdvp3ZatJuZXkL_LW-DVh1rWd3hPSNvL5uJH5h2Xn8HBhTSGpaLeYgjNGwiZXPZXqP_ZCroml37gUCOw9i"
   });
 
@@ -257,10 +257,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                       Professional Background
                     </h3>
                     <p className="text-xs sm:text-sm text-[#424844] leading-relaxed">
-                      Senior corporate legal counsel with over 16 years of experience advising technology enterprises, executive boards, and institutional investors on commercial transactions, corporate governance, and restrictive covenant dispute resolution.
-                    </p>
-                    <p className="text-xs sm:text-sm text-[#424844] leading-relaxed">
-                      Specializes in Delaware Court of Chancery practice, executive employment disputes, non-compete enforceability, and cross-border regulatory compliance.
+                      Active citizen account utilizing AdvoChat GenAI Legal Intelligence to review residential tenancy agreements, understand employment rights under Section 27 of the Indian Contract Act, and prepare due diligence checklists for legal counsel.
                     </p>
                   </div>
 
@@ -274,7 +271,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                         "Corporate Governance & Board Advisory",
                         "Commercial Agreements & Contracts",
                         "Restrictive Covenants & Non-Competes",
-                        "Delaware Court of Chancery Litigation",
+                        "Indian Civil &amp; Consumer Tribunals Litigation",
                         "Technology Licensing & Escrow",
                         "Employment & Severance Covenants"
                       ].map((area, i) => (
@@ -293,10 +290,10 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                     <div className="space-y-3 pt-1 text-xs sm:text-sm text-[#424844]">
                       <div className="flex items-start justify-between">
                         <div>
-                          <div className="font-semibold text-[#042217]">Harvard Law School</div>
-                          <div className="text-xs text-[#506358]">Juris Doctor (J.D.) • Magna Cum Laude</div>
+                          <div className="font-semibold text-[#042217]">National Law School of India University (Legal Literacy Partner)</div>
+                          <div className="text-xs text-[#506358]">Citizen Legal Empowerment Enclave</div>
                         </div>
-                        <span className="text-xs text-[#506358]">Class of 2008</span>
+                        <span className="text-xs text-[#506358]">Active 2026</span>
                       </div>
                       <div className="border-t border-[#e2ddd5]/60 pt-2 flex items-start justify-between">
                         <div>
@@ -307,7 +304,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                       </div>
                       <div className="border-t border-[#e2ddd5]/60 pt-2 flex items-start justify-between">
                         <div>
-                          <div className="font-semibold text-[#042217]">Delaware State Bar Association</div>
+                          <div className="font-semibold text-[#042217]">Indian State Bar Association</div>
                           <div className="text-xs text-[#506358]">Bar Admission #48102 • Active &amp; In Good Standing</div>
                         </div>
                         <span className="text-xs text-[#1b382b] font-semibold">Admitted 2008</span>
@@ -333,15 +330,15 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
 
                     <div>
                       <h4 className="font-serif text-base text-[#042217] font-semibold">
-                        Meridian Corp vs. Vantage BioCapital
+                        Standard Tenancy Agreement vs. Landlord Revision
                       </h4>
                       <p className="text-xs text-[#506358] mt-0.5">
-                        Delaware Court of Chancery • Docket #2024-CV-88219
+                        Indian Civil &amp; Consumer Tribunals • Docket #2024-CV-88219
                       </p>
                     </div>
 
                     <p className="text-xs text-[#424844] leading-relaxed">
-                      Lead Advisory Counsel advising on Clause 4.2 Non-Compete Carve-out, stock purchase warranties, and equity forfeiture terms under Delaware law.
+                      Lead Advisory Counsel advising on Clause 4.2 Non-Compete Carve-out, stock purchase warranties, and equity forfeiture terms under Indian law.
                     </p>
 
                     <div className="pt-2 flex flex-col gap-2">
@@ -371,8 +368,8 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                       <div className="flex items-start gap-2">
                         <StitchIcon name="apartment" className="text-[16px] text-[#1b382b] mt-0.5" />
                         <div>
-                          <div className="font-semibold text-[#042217]">Meridian Technologies Legal Chambers</div>
-                          <div className="text-[#506358]">1201 North Market Street, Suite 1500, Wilmington, DE</div>
+                          <div className="font-semibold text-[#042217]">Legal Assistance Account Legal Chambers</div>
+                          <div className="text-[#506358]">Indiranagar, 100 Feet Road, Bengaluru, Karnataka 560038</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-2 pt-1">
@@ -421,7 +418,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                           <span className="font-semibold text-[#1b382b]">Active</span>
                         </div>
                         <div className="flex items-center justify-between py-1">
-                          <span>Delaware Supreme Court Rule 64 Standards</span>
+                          <span>Indian Supreme Court Rule 64 Standards</span>
                           <span className="font-semibold text-[#1b382b]">Compliant</span>
                         </div>
                       </div>
@@ -447,7 +444,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                   <div className="space-y-3 text-xs sm:text-sm text-[#424844]">
                     <div className="p-3.5 rounded-lg bg-[#fbf9f5] border border-[#e2ddd5]">
                       <div className="flex items-center justify-between">
-                        <span className="font-semibold text-[#042217]">Delaware State Bar Association</span>
+                        <span className="font-semibold text-[#042217]">Indian State Bar Association</span>
                         <span className="px-2 py-0.5 rounded bg-[#d2e8d9] text-[#042217] text-[10px] font-bold">ACTIVE</span>
                       </div>
                       <div className="text-xs text-[#506358] mt-1">Bar ID #48102 • Admitted October 2008</div>
@@ -455,7 +452,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
 
                     <div className="p-3.5 rounded-lg bg-[#fbf9f5] border border-[#e2ddd5]">
                       <div className="flex items-center justify-between">
-                        <span className="font-semibold text-[#042217]">U.S. District Court (Dist. of Delaware)</span>
+                        <span className="font-semibold text-[#042217]">U.S. District Court (Dist. of Indian)</span>
                         <span className="px-2 py-0.5 rounded bg-[#d2e8d9] text-[#042217] text-[10px] font-bold">ACTIVE</span>
                       </div>
                       <div className="text-xs text-[#506358] mt-1">Federal Bar Admission • Admitted May 2009</div>
@@ -482,8 +479,8 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
 
                   <div className="space-y-3 text-xs sm:text-sm text-[#424844]">
                     <div className="p-3.5 rounded-lg bg-[#fbf9f5] border border-[#e2ddd5]">
-                      <div className="font-semibold text-[#042217]">Delaware Chancery Evaluator (Tier 1)</div>
-                      <div className="text-xs text-[#506358] mt-0.5">Specialized certification in Chancery equity jurisprudence.</div>
+                      <div className="font-semibold text-[#042217]">Legal Literacy & Document Due Diligence (Tier 1)</div>
+                      <div className="text-xs text-[#506358] mt-0.5">Certified proficiency in Indian Contract & Tenancy Law analysis.</div>
                     </div>
 
                     <div className="p-3.5 rounded-lg bg-[#fbf9f5] border border-[#e2ddd5]">
@@ -536,7 +533,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
                 <div className="divide-y divide-[#e2ddd5]">
                   {[
                     {
-                      name: "Meridian Corp vs. Vantage — Stock Purchase & Restrictive Covenant",
+                      name: "Residential Tenancy Agreement Due Diligence",
                       type: "Stock Purchase Agreement",
                       status: "Flagged: Clause 4.2 Non-Compete",
                       file: "Exec-SPA-2024.pdf",

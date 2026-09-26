@@ -13,14 +13,14 @@ interface Screen11_DocumentArchiveProps {
 export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> = ({
   onNavigate,
   userProfile: _userProfile = {
-    name: "Eleanor Vance, Esq.",
-    role: "Senior Partner, Chancery Practice",
-    avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
+    name: "Priya Sharma",
+    role: "Citizen / Legal Consumer",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
   },
   onQuickLoadSample: _onQuickLoadSample}) => {
   return (
     <div className="w-full bg-surface text-on-surface antialiased min-h-screen">
-      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Meridian Corp vs. Vantage</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Docket #2024-CV-88219</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">space_dashboard</span><span>Overview</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">neurology</span><span>Briefing Assistant</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">contract</span><span>Clause Analysis</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">menu_book</span><span>Precedent Vault</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">gavel</span><span>Court Filings</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">groups</span><span>Co-Counsel Network</span></a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
+      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Citizen Legal Repository</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Docket Vault Enclave #IN-2026</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">space_dashboard</span><span>Overview</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">neurology</span><span>Briefing Assistant</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">contract</span><span>Clause Analysis</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">menu_book</span><span>Precedent Vault</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">gavel</span><span>Court Filings</span></a><a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)"><span className="material-symbols-outlined text-[18px]">groups</span><span>Co-Counsel Network</span></a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
 {/*  Subtle Architectural Watermark / Atmosphere Layer  */}
 <div className="relative w-full px-gutter py-space-lg flex flex-col gap-space-lg">
 {/*  Evidentiary Folio Header & Enclave Telemetry  */}
@@ -34,7 +34,7 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
 <span className="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
 <div className="flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-surface-container-lowest text-secondary">
 <span className="material-symbols-outlined text-[15px] text-primary">folder_managed</span>
-<span className="font-label-sm text-label-sm text-on-surface font-medium">Meridian Corp vs. Vantage (#2024-CV-88219)</span>
+<span className="font-label-sm text-label-sm text-on-surface font-medium">Citizen Legal Repository (Vault Enclave #IN-2026)</span>
 <span className="text-outline-variant">/</span>
 <span className="font-label-sm text-label-sm text-secondary">All Matched Filings</span>
 </div>
@@ -168,12 +168,12 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
 <div className="relative">
 <select className="appearance-none pl-3 pr-8 py-1.5 rounded bg-surface-container font-label-md text-label-md text-on-surface cursor-pointer focus:outline-none hover:bg-surface-container-high transition-colors">
 <option value="all">Document Type: All Instruments</option>
-<option value="spa">Stock Purchase Agreements (SPA)</option>
+<option value="spa">Residential Tenancy Leases</option>
 <option value="msa">Master Service Agreements</option>
 <option value="nda">NDAs &amp; Restrictive Covenants</option>
-<option value="transcripts">Deposition Transcripts</option>
+<option value="transcripts">Consumer Protection Formal Notices</option>
 <option value="motions">Judicial Pleadings &amp; Motions</option>
-<option value="bylaws">Bylaws &amp; Corporate Charters</option>
+<option value="bylaws">Freelance &amp; Service Contracts</option>
 </select>
 <span className="material-symbols-outlined absolute right-2 top-2 text-[16px] text-secondary pointer-events-none">expand_more</span>
 </div>
@@ -202,10 +202,10 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
 <div className="relative">
 <select className="appearance-none pl-3 pr-8 py-1.5 rounded bg-surface-container font-label-md text-label-md text-on-surface cursor-pointer focus:outline-none hover:bg-surface-container-high transition-colors">
 <option value="all-jur">Jurisdiction: All Benches</option>
-<option value="de-chancery">Delaware Chancery Court</option>
-<option value="ca-bp">California B&amp;P Bench</option>
-<option value="ny-comm">NY Commercial Division</option>
-<option value="fed-2nd">Federal 2nd Circuit</option>
+<option value="rent-court">Rent Controller / Civil Court</option>
+<option value="ca-bp">RERA Authority (Real Estate)</option>
+<option value="ny-comm">Consumer Disputes Forum (e-Daakhil)</option>
+<option value="fed-2nd">High Court of Delhi / Bombay</option>
 </select>
 <span className="material-symbols-outlined absolute right-2 top-2 text-[16px] text-secondary pointer-events-none">expand_more</span>
 </div>
@@ -250,7 +250,7 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
           </label>
 </div>
 <div className="font-body-sm text-body-sm text-secondary">
-          Displaying verified work products under Case Docket <span className="font-mono text-on-surface font-semibold">#2024-CV-88219</span>
+          Displaying verified work products under Case Docket <span className="font-mono text-on-surface font-semibold">Vault Enclave #IN-2026</span>
 </div>
 </div>
 {/*  Ledger Cards Container  */}
@@ -277,18 +277,18 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
                   3 High Judicial Risks
                 </span>
 <span className="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
-                  DGCL § 102(b)(7) Verified
+                  Section 106 TP Act 1882 Verified
                 </span>
 </div>
 {/*  Document Title  */}
 <h2 className="font-headline-sm text-headline-sm text-primary tracking-tight truncate">
-                Series B Preferred Stock Purchase &amp; Investor Rights Agreement
+                Residential Tenancy Agreement (Standard 11-Month Lease)
               </h2>
 {/*  Metadata & Cryptographic Hashes  */}
 <div className="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
 <span className="font-mono text-label-sm text-secondary flex items-center gap-1">
 <span className="material-symbols-outlined text-[14px]">attachment</span>
-                  Meridian_Series_B_SPA_Rev4.1.pdf
+                  Residential_Tenancy_Agreement_11Month.pdf
                 </span>
 <span className="font-mono text-label-sm text-outline">
                   SHA-256: 7c4e9f...8a01b2
@@ -299,14 +299,14 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
                 </span>
 <span className="flex items-center gap-1">
 <span className="material-symbols-outlined text-[14px] text-secondary">person_check</span>
-                  Eleanor Vance, Esq.
+                  Priya Sharma
                 </span>
 </div>
 {/*  Extracted Juridical Insight Snippet  */}
 <div className="mt-1 px-space-sm py-1.5 rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm flex items-start gap-2">
 <span className="material-symbols-outlined text-[16px] text-error shrink-0 mt-0.5">warning</span>
 <span className="truncate">
-<strong>Clause 4.2 Ainslie Restraint flag:</strong> Potential liquidated damages enforceability challenge under Delaware Chancery standard. 42 total redline variances tracked.
+<strong>Clause 6 Notice Period flag:</strong> Landlord requires 30-day notice under Section 106 TP Act. Security deposit refund mandated within 15 days.
                 </span>
 </div>
 </div>
@@ -380,7 +380,7 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
 <div className="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
 <span className="font-mono text-label-sm text-secondary flex items-center gap-1">
 <span className="material-symbols-outlined text-[14px]">attachment</span>
-                  Vantage_Meridian_Bilateral_NDA_2024.docx
+                  Bilateral_Confidentiality_NDA_2026.docx
                 </span>
 <span className="font-mono text-label-sm text-outline">
                   SHA-256: 3a91bf...992c10
@@ -441,12 +441,12 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
                 </span>
 </div>
 <h2 className="font-headline-sm text-headline-sm text-primary tracking-tight truncate">
-                Deposition Transcript of Dr. Julian Mercer (CEO, Meridian Corp)
+                Transcript of Eviction Hearing (Rent Control Court)
               </h2>
 <div className="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
 <span className="font-mono text-label-sm text-secondary flex items-center gap-1">
 <span className="material-symbols-outlined text-[14px]">attachment</span>
-                  Vantage_Counterclaim_Exhibit_C_Deposition_Transcript.pdf
+                  Landlord_Counterclaim_Exhibit_C_Deposition_Transcript.pdf
                 </span>
 <span className="font-mono text-label-sm text-outline">
                   SHA-256: e820ba...43df88
@@ -569,7 +569,7 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
                   Fully Executed &amp; Recorded
                 </span>
 <span className="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
-                  DGCL § 242 Certified
+                  Indian Contract Act 1872 Compliant
                 </span>
 </div>
 <h2 className="font-headline-sm text-headline-sm text-primary tracking-tight truncate">
@@ -578,7 +578,7 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
 <div className="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
 <span className="font-mono text-label-sm text-secondary flex items-center gap-1">
 <span className="material-symbols-outlined text-[14px]">attachment</span>
-                  Meridian_Amended_Charter_Delaware_Filing.pdf
+                  Residential_Tenancy_Agreement_11Month.pdf
                 </span>
 <span className="font-mono text-label-sm text-outline">
                   SHA-256: bd8401...11ae92
@@ -622,7 +622,7 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
 <div className="flex items-center gap-space-sm font-body-sm text-body-sm text-secondary">
 <span>Showing 1 to 5 of 14 Instruments</span>
 <span>•</span>
-<span className="text-on-surface font-medium">Delaware Jurisdiction Enclave 01</span>
+<span className="text-on-surface font-medium">DPDP Act 2023 Secure Enclave</span>
 </div>
 <div className="flex items-center gap-1">
 <button className="px-3 py-1.5 rounded bg-surface-container text-outline font-label-md cursor-not-allowed" disabled={true} type="button">Previous</button>
@@ -687,14 +687,14 @@ export const Screen11_DocumentArchive: React.FC<Screen11_DocumentArchiveProps> =
 </div>
 {/*  Specific Target Instrument Snapshot  */}
 <div className="px-space-sm py-2 rounded bg-surface-container flex flex-col gap-1 text-on-surface">
-<div className="font-label-md text-label-md font-semibold truncate">Target: Series B Preferred Stock Purchase &amp; Investor Rights Agreement</div>
+<div className="font-label-md text-label-md font-semibold truncate">Target: Residential Tenancy Agreement (Standard 11-Month Lease)</div>
 <div className="font-mono text-label-sm text-secondary">SHA-256: 7c4e9f3b890a218fce132cda908129841bb21019</div>
 </div>
 {/*  Confirmation Checkbox  */}
 <div className="flex items-start gap-space-sm pt-1">
 <input className="mt-1 w-4 h-4 rounded-xs accent-error cursor-pointer" id="confirm-purge-checkbox" type="checkbox"/>
 <label className="font-body-sm text-body-sm text-on-surface-variant cursor-pointer" htmlFor="confirm-purge-checkbox">
-          I certify that this expungement complies with the relevant Protective Order and document retention guidelines under Case #2024-CV-88219.
+          I certify that this expungement complies with the relevant Protective Order and document retention guidelines under Case Vault Enclave #IN-2026.
         </label>
 </div>
 {/*  Modal Actions  */}

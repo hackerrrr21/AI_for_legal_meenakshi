@@ -13,14 +13,14 @@ interface Screen19_ArticleDetailsProps {
 export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = ({
   onNavigate,
   userProfile: _userProfile = {
-    name: "Eleanor Vance, Esq.",
-    role: "Senior Partner, Chancery Practice",
-    avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
+    name: "Priya Sharma",
+    role: "Citizen / Legal Consumer",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=256"
   },
   onQuickLoadSample: _onQuickLoadSample}) => {
   return (
     <div className="w-full bg-surface text-on-surface antialiased min-h-screen">
-      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">Meridian Corp vs. Vantage</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Docket #2024-CV-88219</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)">Overview</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)">Briefing Assistant</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)">Clause Analysis</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)">Precedent Vault</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('legal-articles-updates')} href="javascript:void(0)">Legal Articles &amp; Updates</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)">Court Filings</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)">Find Counsel &amp; Co-Counsel</a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
+      <aside className="fixed left-0 top-16 bottom-0 w-64 hidden lg:flex bg-surface-container-low shadow-[1px_0_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-lg"><div className="px-space-sm pt-space-xs"><div className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Matter Context</div><div className="font-headline-sm text-headline-sm text-on-surface font-medium mt-1 truncate">IT Employment Contract Review</div><div className="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Guide Ref #IND-EMP-27</div></div><div className="flex flex-col gap-space-xs"><div className="px-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Case Portfolio</div><nav className="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)">Overview</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)">Briefing Assistant</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)">Clause Analysis</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)">Precedent Vault</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('legal-articles-updates')} href="javascript:void(0)">Legal Articles &amp; Updates</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-archive')} href="javascript:void(0)">Court Filings</a><a className="px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)">Find Counsel &amp; Co-Counsel</a></nav></div></div><div className="flex flex-col gap-space-sm p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div className="flex items-center justify-between"><span className="font-label-sm text-label-sm font-semibold text-secondary uppercase">Encryption</span><span className="font-label-sm text-label-sm font-semibold text-on-primary-container">256-BIT AES</span></div><div className="font-body-sm text-body-sm text-on-surface-variant">Zero-retention statutory compliance mode active.</div></div></aside><div className="pl-0 lg:pl-64 flex flex-col min-h-screen"><main className="relative pt-16 flex-1 w-full bg-surface"><div className="flex flex-col w-full">
 {/*  Reading Progress Bar (Fixed beneath app shell header)  */}
 <div className="sticky top-16 z-30 w-full bg-surface-container-high h-1">
 <div className="h-1 bg-primary-container transition-all duration-150 ease-out" id="read-progress" style={{"width":"28%"}}></div>
@@ -89,10 +89,10 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <div>
 <div className="flex items-center gap-space-xs flex-wrap">
 <span className="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold uppercase tracking-wider">Direct Matter Nexus</span>
-<span className="font-body-sm text-body-sm text-secondary-fixed font-medium">Meridian Corp vs. Vantage (Docket #2024-CV-88219)</span>
+<span className="font-body-sm text-body-sm text-secondary-fixed font-medium">IT Employment Contract Review (Guide Ref #IND-EMP-27)</span>
 </div>
 <p className="font-body-md text-body-md text-on-primary/90 mt-0.5">
-            This doctrine directly refutes Vantage’s reliance on the forfeiture clause in <strong>Disputed Clause 4.2 ($1,850,000 equity clawback claim)</strong>.
+            This doctrine directly refutes Landlord’s reliance on the forfeiture clause in <strong>Unreasonable 2-Year Non-Compete Restraint &amp; Relieving Letter Withholding</strong>.
           </p>
 </div>
 </div>
@@ -118,7 +118,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
                 Critical Precedent Alert
               </span>
 <span className="px-2.5 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-                Delaware Supreme Court En Banc
+                Supreme Court of India En Banc
               </span>
 </div>
 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm">
@@ -128,23 +128,23 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 </div>
 {/*  Headline  */}
 <h1 className="font-headline-lg text-headline-lg text-primary tracking-tight font-serif">
-            The Death of “Employee Choice”: How the Delaware Supreme Court’s <em className="italic font-normal">Cantor Fitzgerald</em> Ruling Re-Draws Forfeiture Boundaries in Corporate Equity
+            Are Non-Compete Clauses Legal in India? Section 27 Explained for Employees and Founders
           </h1>
 {/*  Deck / Subtitle  */}
 <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-            An exhaustive doctrinal review of <strong className="text-on-surface font-semibold">Ainslie v. Cantor Fitzgerald L.P.</strong> and the demise of contractual immunity for unmitigated partnership equity clawbacks under DRULPA § 17-101(c).
+            An exhaustive doctrinal review of <strong className="text-on-surface font-semibold">Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan (Supreme Court of India, 2006)</strong> and the demise of contractual immunity for unmitigated partnership equity clawbacks under Section 27 of The Indian Contract Act, 1872.
           </p>
 {/*  Authorship & Publication Citation Bar  */}
 <div className="pt-space-md mt-space-xs border-t-0 flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-low/60 -mx-space-xl -mb-space-xl p-space-lg rounded-b-xl">
 <div className="flex items-center gap-space-md">
-<img className="w-12 h-12 rounded-full object-cover shadow-sm ring-2 ring-primary-container/20" data-alt="Close-up professional headshot of Eleanor Vance, Esq., Senior Litigation Partner in tailored charcoal business suit with mahogany bookshelves and library law volumes in soft warm focus behind her." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYaIE4WH0wDeT96d6o2sMGFdPOQ1Qy8V_bltj4nFe-qrWkMT1wRT2QaUNazebSU4MHtin_QsRt5s_W1v422HF7wYzIzhPhb_0JsoFNllCs1ulZq2LwBsiGqXygQ5mCOcHCwAtJc-616GptZ-vbA7w5D9UjbAfkAaWBhHaqc3wmeSDBaXnts-vDW1WfTRKjD30rlpBiEWFgQnyVewNRI7ilcTSdtXLYzR-dtc16dft6F1WoWxOrqqRyIg"/>
+<img className="w-12 h-12 rounded-full object-cover shadow-sm ring-2 ring-primary-container/20" data-alt="Close-up professional headshot of Adv. Vikramaditya Sen, Senior Litigation Partner in tailored charcoal business suit with mahogany bookshelves and library law volumes in soft warm focus behind her." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYaIE4WH0wDeT96d6o2sMGFdPOQ1Qy8V_bltj4nFe-qrWkMT1wRT2QaUNazebSU4MHtin_QsRt5s_W1v422HF7wYzIzhPhb_0JsoFNllCs1ulZq2LwBsiGqXygQ5mCOcHCwAtJc-616GptZ-vbA7w5D9UjbAfkAaWBhHaqc3wmeSDBaXnts-vDW1WfTRKjD30rlpBiEWFgQnyVewNRI7ilcTSdtXLYzR-dtc16dft6F1WoWxOrqqRyIg"/>
 <div className="flex flex-col">
 <div className="flex items-center gap-2">
-<span className="font-label-lg text-label-lg font-bold text-on-surface">Eleanor Vance, Esq.</span>
+<span className="font-label-lg text-label-lg font-bold text-on-surface">Adv. Vikramaditya Sen</span>
 <span className="text-xs text-secondary">•</span>
 <span className="font-label-md text-label-md text-secondary">Co-Authored with Hon. M. Sterling</span>
 </div>
-<span className="font-body-sm text-body-sm text-on-surface-variant">Senior Partner, Complex Commercial Litigation • Vantage Trial Lead</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant">Senior Partner, Complex Commercial Litigation • Landlord Trial Lead</span>
 </div>
 </div>
 <div className="flex flex-col sm:text-right text-secondary">
@@ -161,7 +161,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <span className="font-label-md text-label-md uppercase tracking-wider font-bold text-primary-container">Executive Doctrinal Abstract</span>
 </div>
 <p className="font-body-lg text-body-lg text-on-surface leading-relaxed italic font-serif">
-            “The Delaware Supreme Court has formally dismantled the long-standing fiction that ‘forfeiture-for-competition’ provisions escape judicial reasonableness scrutiny under the guise of consensual partner choice. In <em>Ainslie v. Cantor Fitzgerald L.P.</em> (Del. 2024), Chief Justice Seitz clarified that substantial financial penalties conditioned on non-competition constitute restraints of trade, subject to orthodox equitable review regardless of Delaware’s statutory reverence for freedom of contract.”
+            “The Supreme Court of India has formally dismantled the long-standing fiction that ‘forfeiture-for-competition’ provisions escape judicial reasonableness scrutiny under the guise of consensual partner choice. In <em>Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan (Supreme Court of India, 2006)</em> (Del. 2024), Chief Justice Seitz clarified that substantial financial penalties conditioned on non-competition constitute restraints of trade, subject to orthodox equitable review regardless of Indian’s statutory reverence for freedom of contract.”
           </p>
 </section>
 {/*  Main Body Content with Rich Typographic Cadence  */}
@@ -173,10 +173,10 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
               1. The Historical Anomaly of the “Employee Choice” Doctrine
             </h2>
 <p className="mb-4">
-              For more than three decades, sophisticated drafters of Delaware limited partnerships and corporate executive agreements relied upon an assumed legal firewall: the distinction between an affirmative <em>injunctive covenant</em> and a conditional <em>forfeiture of deferred compensation</em>. Under what came to be adopted from New York jurisprudence as the “employee choice doctrine,” courts indulged the presumption that an executive who departs to join a competitor is not legally restrained; rather, they simply choose between two freely bargained contractual options—retaining unvested equity or exercising their liberty to compete elsewhere.
+              For more than three decades, sophisticated drafters of Indian limited partnerships and corporate executive agreements relied upon an assumed legal firewall: the distinction between an affirmative <em>injunctive covenant</em> and a conditional <em>forfeiture of deferred compensation</em>. Under what came to be adopted from New York jurisprudence as the “employee choice doctrine,” courts indulged the presumption that an executive who departs to join a competitor is not legally restrained; rather, they simply choose between two freely bargained contractual options—retaining unvested equity or exercising their liberty to compete elsewhere.
             </p>
 <p className="mb-4">
-              This formalistic indulgence found fertile ground within the Delaware Court of Chancery, buoyed by the express policy mandate of the Delaware Revised Uniform Limited Partnership Act (<strong>DRULPA § 17-101(c)</strong>), which gives “maximum effect to the principle of freedom of contract and to the enforceability of partnership agreements.” Drafters quickly realized that if they structured multi-year non-compete strictures as conditions precedent to capital distribution payments rather than prohibitive injunctions, Chancery would regularly enforce draconian four- and five-year worldwide clawbacks without subjecting the terms to traditional common-law reasonableness tests.
+              This formalistic indulgence found fertile ground within the High Courts of India &amp; Supreme Court, buoyed by the express policy mandate of the Indian Revised Uniform Limited Partnership Act (<strong>Section 27 of The Indian Contract Act, 1872</strong>), which gives “maximum effect to the principle of freedom of contract and to the enforceability of partnership agreements.” Drafters quickly realized that if they structured multi-year non-compete strictures as conditions precedent to capital distribution payments rather than prohibitive injunctions, Civil Court would regularly enforce draconian four- and five-year worldwide clawbacks without subjecting the terms to traditional common-law reasonableness tests.
             </p>
 </div>
 {/*  Judicial Excerpt / Pull Quote  */}
@@ -186,7 +186,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
               “When an agreement extracts millions in vested earnings upon the commencement of competitive employment, it operates as a financial muzzle. Equity will not pretend it is anything other than a restraint of trade.”
             </blockquote>
 <figcaption className="font-label-md text-label-md text-secondary font-semibold mt-1">
-              — Chief Justice Collins J. Seitz Jr., Delaware Supreme Court (<cite className="font-normal not-italic">Ainslie v. Cantor Fitzgerald L.P.</cite>, No. 162, 2023, at *19)
+              — Hon'ble Supreme Court of India (Division Bench) (<cite className="font-normal not-italic">Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan (Supreme Court of India, 2006)</cite>, No. 162, 2023, at *19)
             </figcaption>
 </div>
 {/*  Section 2  */}
@@ -196,7 +196,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
               2. The Tripartite Reasonableness Test Applied to Forfeitures
             </h2>
 <p className="mb-4">
-              In sweeping aside the employee choice shield, the Delaware Supreme Court en banc unified the judicial framework. Henceforth, whenever an employer seeks to forfeit deferred compensation, capital units, or equity interests based upon post-employment competitive activity, Chancery courts must subject the clause to the tripartite common-law reasonableness inquiry:
+              In sweeping aside the employee choice shield, the Supreme Court of India en banc unified the judicial framework. Henceforth, whenever an employer seeks to forfeit deferred compensation, capital units, or equity interests based upon post-employment competitive activity, Civil Court courts must subject the clause to the tripartite common-law reasonableness inquiry:
             </p>
 {/*  3-Prong Visual breakdown  */}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-space-md my-4">
@@ -211,7 +211,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <div className="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center font-bold">2</div>
 <h3 className="font-label-lg text-label-lg font-bold text-primary">Temporal Duration</h3>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  One-year periods remain defensible in Chancery; multi-year multi-stage clawbacks (such as Cantor’s 4-year conditional lock) are classified as punitive restraints unless backed by trade secrets.
+                  One-year periods remain defensible in Civil Court; multi-year multi-stage clawbacks (such as Cantor’s 4-year conditional lock) are classified as punitive restraints unless backed by trade secrets.
                 </p>
 </div>
 <div className="p-space-md rounded-lg bg-surface-container flex flex-col gap-1.5 shadow-sm">
@@ -231,33 +231,33 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <button className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold hover:underline">View Citations (4)</button>
 </div>
 </div>
-{/*  Section 3: Litigating in Chancery & Redline Comparison  */}
+{/*  Section 3: Litigating in Civil Court & Redline Comparison  */}
 <div>
 <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block mb-1">Section III</span>
 <h2 className="font-headline-md text-headline-md font-serif text-primary mb-3" id="sec-3">
-              3. Litigating the Aftermath: Drafting &amp; Defending in Chancery
+              3. Litigating the Aftermath: Drafting &amp; Defending in Civil Court
             </h2>
 <p className="mb-4">
-              The practical impact on pending Delaware litigations is immediate. The Supreme Court decisively reaffirmed that Delaware courts will <em>not</em> readily blue-pencil (judicially modify) an overbroad restrictive covenant in an employment or partner compensation context where the disparity of bargaining power or drafting breadth suggests overreaching.
+              The practical impact on pending Indian litigations is immediate. The Supreme Court decisively reaffirmed that Indian courts will <em>not</em> readily blue-pencil (judicially modify) an overbroad restrictive covenant in an employment or partner compensation context where the disparity of bargaining power or drafting breadth suggests overreaching.
             </p>
 {/*  Clause Comparison Redline Box  */}
 <div className="rounded-xl overflow-hidden shadow-sm bg-surface-container-low mb-4">
 <div className="px-space-md py-2.5 bg-surface-container-high flex items-center justify-between">
 <span className="font-label-md text-label-md uppercase tracking-wider font-bold text-primary flex items-center gap-1.5">
 <span className="material-symbols-outlined text-[16px]">compare</span>
-                  Disputed Clause 4.2 Redline Vulnerability (Meridian vs. Vantage)
+                  Disputed Clause 4.2 Redline Vulnerability (AdvoChat vs. Landlord)
                 </span>
-<span className="font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold px-2 py-0.5 rounded">Unenforceable Post-Ainslie</span>
+<span className="font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold px-2 py-0.5 rounded">Void Under Section 27 (Percept D'Mark)</span>
 </div>
 <div className="p-space-md flex flex-col gap-3 font-mono text-body-sm text-on-surface">
 <div className="p-space-sm bg-error-container/30 rounded">
-<span className="font-label-sm text-label-sm text-error font-bold block mb-1">Vantage's Existing Clause 4.2 (Vulnerable to Voidance):</span>
+<span className="font-label-sm text-label-sm text-error font-bold block mb-1">Landlord's Existing Clause 4.2 (Vulnerable to Voidance):</span>
 <p className="line-through decoration-error text-on-surface-variant">
                     “Partner shall forfeit 100% of accumulated Class B Distributions ($1,850,000) if, within thirty-six (36) months of cessation of duties, Partner directly or indirectly engages in any consulting or advisory role with any entity operating in enterprise cloud orchestration anywhere in North America or EMEA.”
                   </p>
 </div>
 <div className="p-space-sm bg-secondary-container/40 rounded">
-<span className="font-label-sm text-label-sm text-on-secondary-container font-bold block mb-1">Ainslie-Compliant Recommended Revision:</span>
+<span className="font-label-sm text-label-sm text-on-secondary-container font-bold block mb-1">Section 27 Compliant Revision (Permissible Confidentiality Only):</span>
 <p className="text-primary font-medium">
                     “Executive agrees that forfeiture shall apply solely if, within twelve (12) months of separation, Executive directly solicits or provides competitive advisory services to Named Key Accounts with whom Executive had direct material interaction during the final eighteen (18) months of tenure.”
                   </p>
@@ -265,7 +265,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 </div>
 </div>
 <p>
-              Under Vice Chancellor Will’s latest bench rulings following <em>Cantor Fitzgerald</em>, employers can no longer plead freedom of contract under DRULPA to salvage overbroad provisions. If the geographic scope encompasses territories where the partner never set foot or generated billings, the penalty fails completely.
+              Under Vice Chancellor Will’s latest bench rulings following <em>Cantor Fitzgerald</em>, employers can no longer plead freedom of contract under Indian Contract Act to salvage overbroad provisions. If the geographic scope encompasses territories where the partner never set foot or generated billings, the penalty fails completely.
             </p>
 </div>
 {/*  Section 4: Key Takeaways Cards  */}
@@ -287,7 +287,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
                   No Guaranteed Blue-Penciling
                 </span>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  Delaware Chancery rarely repairs overbroad clawbacks; an overreaching restriction typically leads to total invalidation of the forfeiture clause.
+                  Indian Civil Courts rarely repairs overbroad clawbacks; an overreaching restriction typically leads to total invalidation of the forfeiture clause.
                 </p>
 </div>
 <div className="p-space-md rounded-xl bg-surface-container flex flex-col gap-1 shadow-sm">
@@ -305,7 +305,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
                   Immediate Procedural Remedy
                 </span>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  File Rule 12(c) Motion for Judgment on the Pleadings in pending Chancery clawback disputes where scope exceeds 12 months or local accounts.
+                  File Rule 12(c) Motion for Judgment on the Pleadings in pending Civil Court clawback disputes where scope exceeds 12 months or local accounts.
                 </p>
 </div>
 </div>
@@ -320,7 +320,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 </div>
 <div>
 <h3 className="font-headline-sm text-headline-sm text-primary font-serif">Ask AdvoChat About This Precedent</h3>
-<span className="font-label-sm text-label-sm text-secondary">Contextually bound to Doc Ref: ART-2024-DEL-89 &amp; Active Docket #2024-CV-88219</span>
+<span className="font-label-sm text-label-sm text-secondary">Contextually bound to Doc Ref: ART-2024-DEL-89 &amp; Active Guide Ref #IND-EMP-27</span>
 </div>
 </div>
 <span className="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
@@ -332,19 +332,19 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <div className="grid grid-cols-1 md:grid-cols-2 gap-space-xs">
 <button className="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-left transition-all group flex items-start gap-2 shadow-sm">
 <span className="material-symbols-outlined text-[18px] text-tertiary-container group-hover:translate-x-0.5 transition-transform mt-0.5">arrow_forward</span>
-<span className="font-body-sm text-body-sm text-on-surface font-medium">How does Ainslie undermine Vantage’s counterclaim in Clause 4.2?</span>
+<span className="font-body-sm text-body-sm text-on-surface font-medium">How does Section 27 invalidate post-service non-compete restraints?</span>
 </button>
 <button className="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-left transition-all group flex items-start gap-2 shadow-sm">
 <span className="material-symbols-outlined text-[18px] text-tertiary-container group-hover:translate-x-0.5 transition-transform mt-0.5">arrow_forward</span>
-<span className="font-body-sm text-body-sm text-on-surface font-medium">Draft a 1-page bench memorandum arguing Ainslie voidance for Chancery hearing</span>
+<span className="font-body-sm text-body-sm text-on-surface font-medium">Draft a 1-page notice response to employer citing Section 27 voidness</span>
 </button>
 <button className="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-left transition-all group flex items-start gap-2 shadow-sm">
 <span className="material-symbols-outlined text-[18px] text-tertiary-container group-hover:translate-x-0.5 transition-transform mt-0.5">arrow_forward</span>
-<span className="font-body-sm text-body-sm text-on-surface font-medium">Can Chancery judges still blue-pencil overbroad geography post-2024?</span>
+<span className="font-body-sm text-body-sm text-on-surface font-medium">Do Indian courts apply blue-pencil doctrine to employment contracts?</span>
 </button>
 <button className="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-left transition-all group flex items-start gap-2 shadow-sm">
 <span className="material-symbols-outlined text-[18px] text-tertiary-container group-hover:translate-x-0.5 transition-transform mt-0.5">arrow_forward</span>
-<span className="font-body-sm text-body-sm text-on-surface font-medium">Compare Ainslie’s LP rule with New York’s employee choice doctrine</span>
+<span className="font-body-sm text-body-sm text-on-surface font-medium">Why Indian courts reject the reasonableness test for non-competes</span>
 </button>
 </div>
 {/*  Blotter Style Chat Input Form  */}
@@ -373,8 +373,8 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <div className="flex items-center gap-2 flex-wrap">
 <span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#RestrictiveCovenants</span>
 <span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#EquityClawbacks</span>
-<span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#DRULPA§17-101(c)</span>
-<span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#DelawareChancery</span>
+<span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#Indian Contract Act§17-101(c)</span>
+<span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#IndianContractAct</span>
 <span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#ForfeitureForCompetition</span>
 <span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#BluePencilDoctrine</span>
 <span className="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-sm hover:text-primary hover:bg-surface-container cursor-pointer transition-colors">#ABAModelRule5.6</span>
@@ -398,10 +398,10 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <span className="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold">Clause 16.1</span>
 </div>
 <h4 className="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors line-clamp-2">
-                  Navigating DGCL § 122(18): Safe Harbors for Stockholder Agreements Post-Moelis
+                  Navigating Article 19(1)(g) of the Constitution of India: Safe Harbors for Stockholder Agreements Post-Moelis
                 </h4>
 <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                  Chancery’s calibration of corporate governance prerogatives and stockholder voting pacts under the new legislative amendments.
+                  Civil Court’s calibration of corporate governance prerogatives and stockholder voting pacts under the new legislative amendments.
                 </p>
 </div>
 <div className="pt-space-sm mt-space-sm flex items-center justify-between text-secondary">
@@ -436,10 +436,10 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <span className="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-secondary font-bold">FTC Scope</span>
 </div>
 <h4 className="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors line-clamp-2">
-                  FTC Non-Compete Injunctions &amp; Interplay with Delaware LP Partnerships
+                  FTC Non-Compete Injunctions &amp; Interplay with Indian LP Partnerships
                 </h4>
 <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                  Federal nationwide stays versus Delaware contract jurisprudence: where multi-jurisdictional executives stand.
+                  Federal nationwide stays versus Indian contract jurisprudence: where multi-jurisdictional executives stand.
                 </p>
 </div>
 <div className="pt-space-sm mt-space-sm flex items-center justify-between text-secondary">
@@ -459,8 +459,8 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <span className="material-symbols-outlined text-[18px] text-tertiary-container">hub</span>
 </div>
 <div className="flex flex-col gap-1">
-<span className="font-headline-sm text-headline-sm font-serif text-primary font-bold">Meridian Corp vs. Vantage</span>
-<span className="font-body-sm text-body-sm text-on-surface-variant">Chancery Docket #2024-CV-88219 • Assigned to Vice Chancellor Laster</span>
+<span className="font-headline-sm text-headline-sm font-serif text-primary font-bold">IT Employment Contract Review</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant">Legal Guide Ref #IND-EMP-27 • Verified by High Court Advocate</span>
 </div>
 <div className="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
 <div className="flex justify-between items-center text-xs">
@@ -471,12 +471,12 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <div className="bg-error h-1.5 rounded-full" style={{"width":"78%"}}></div>
 </div>
 <span className="font-label-sm text-label-sm text-secondary mt-1">
-              Ainslie defense probability: <strong>High (84% dismissibility)</strong>
+              Section 27 statutory defense probability: <strong>Absolute (100% Void ab initio)</strong>
 </span>
 </div>
 <button className="w-full py-2.5 px-space-md rounded bg-primary-container text-on-primary font-label-md text-label-md font-bold hover:bg-primary transition-colors shadow-sm flex items-center justify-center gap-2">
 <span className="material-symbols-outlined text-[18px]">note_add</span>
-<span>Inject Precedent into Vantage Brief</span>
+<span>Inject Precedent into Landlord Brief</span>
 </button>
 </div>
 {/*  Sticky Navigation: Table of Contents & Outline  */}
@@ -495,7 +495,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <span className="text-xs text-outline">03:40</span>
 </a>
 <a className="px-space-sm py-1.5 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" href="#sec-3">
-<span>3. Litigating in Chancery: Redlines</span>
+<span>3. Section 27 Redline Analysis: Why Non-Competes Fail</span>
 <span className="text-xs text-outline">06:15</span>
 </a>
 <a className="px-space-sm py-1.5 rounded text-secondary hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" href="#sec-4">
@@ -510,7 +510,7 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <span className="font-label-sm text-label-sm uppercase tracking-wider font-bold">1.0 General CLE Credit</span>
 </div>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Accredited by Delaware Supreme Court Commission on CLE &amp; NY State CLE Board.
+              Accredited by Supreme Court of India Commission on CLE &amp; NY State CLE Board.
             </p>
 <button className="mt-1 w-full py-1.5 rounded bg-surface-container-highest hover:bg-surface-container font-label-sm text-label-sm font-bold text-on-surface transition-colors flex items-center justify-center gap-1">
 <span>Record Reading Attendance</span>
@@ -518,15 +518,14 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 </div>
 {/*  Author Profile Card  */}
 <div className="pt-space-md border-t-0 flex flex-col gap-space-sm">
-<div className="flex items-center gap-space-sm">
-<img className="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait photo of Eleanor Vance, lead litigation partner, looking confident in an executive legal library." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXicdjaTs17TkMBwD6G7wkC2q4E-wjUZnZpalJpWLT1ax2XYsEW9ZbznD3JJPfEJJ6T43mcVhmJyCm2HDG-fhqLlS4umFTfK6K9zGtG-3xx3WW3mc_kU17SChRASVF0c1ZtprKndXWe99c1T6KPoCt5MAKUVsiz4b4gnSBtBEjZvYfOaecKkL7jihgp9BJI7WIQie4G695QFSXgG0Cyc4kZHUpc2WSKwc29Rjf9fexJsmAVNVoDNseHA"/>
+<img className="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait photo of Adv. Vikramaditya Sen, Corporate &amp; Employment Advocate." src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=256"/>
 <div className="flex flex-col">
-<span className="font-label-md text-label-md font-bold text-on-surface">Eleanor Vance, Esq.</span>
-<span className="font-body-sm text-body-sm text-secondary">Lead Litigation Partner</span>
+<span className="font-label-md text-label-md font-bold text-on-surface">Adv. Vikramaditya Sen</span>
+<span className="font-body-sm text-body-sm text-secondary">Corporate &amp; Employment Advocate</span>
 </div>
 </div>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Appeared in over 45 Delaware Chancery oral arguments involving corporate governance, DRULPA interpretation, and executive remuneration disputes.
+              Appeared in over 45 Indian Civil Courts oral arguments involving corporate governance, Indian Contract Act interpretation, and executive remuneration disputes.
             </p>
 <div className="flex items-center gap-2 mt-1">
 <button className="flex-1 py-1.5 rounded bg-surface-container-highest hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold transition-colors flex items-center justify-center gap-1">
@@ -536,7 +535,6 @@ export const Screen19_ArticleDetails: React.FC<Screen19_ArticleDetailsProps> = (
 <button className="py-1.5 px-2.5 rounded bg-surface-container-highest hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Download V-Card">
 <span className="material-symbols-outlined text-[16px]">id_card</span>
 </button>
-</div>
 </div>
 </div>
 </aside>
