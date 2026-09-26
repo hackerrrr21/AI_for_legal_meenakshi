@@ -4,6 +4,7 @@
  * modifications, and changes in risk exposure.
  */
 import { DocumentComparisonResult, ComparisonDiff } from '../types/legal';
+import { comparisonResultCache } from '../utils/cacheManager';
 
 export function compareLegalDocuments(
   docAName: string,
@@ -11,6 +12,12 @@ export function compareLegalDocuments(
   docBName: string,
   docBText: string
 ): DocumentComparisonResult {
+  const cacheKey = `${docAName}::${docAText.length}::${docBName}::${docBText.length}::${docAText.slice(0, 50)}::${docBText.slice(0, 50)}`;
+  const cached = comparisonResultCache.get(cacheKey);
+  if (cached) {
+    return cached as DocumentComparisonResult;
+  }
+
   const differences: ComparisonDiff[] = [];
   const tA = docAText.toLowerCase();
   const tB = docBText.toLowerCase();
@@ -134,7 +141,7 @@ export function compareLegalDocuments(
     'Ask for written confirmation that any ambiguous terms will be interpreted fairly under standard consumer protection doctrines.'
   ];
 
-  return {
+  const result: DocumentComparisonResult = {
     docAName,
     docBName,
     summaryOfChanges: `Comparison between **${docAName}** (Baseline) and **${docBName}** (Counterproposal) identified **${differences.length} key clause variations**. Overall, the counterproposal represents a **${overallRiskImpact === 'higher_risk' ? 'HIGHER RISK' : 'SIMILAR RISK'}** profile due to more stringent obligations placed upon you.`,
@@ -142,4 +149,7 @@ export function compareLegalDocuments(
     differences,
     keyRecommendations: recommendations
   };
+
+  comparisonResultCache.set(cacheKey, result);
+  return result;
 }

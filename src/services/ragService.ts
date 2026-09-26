@@ -147,6 +147,18 @@ function tokenize(text: string): string[] {
     .filter(word => word.length > 2 && !STOPWORDS.has(word));
 }
 
+// Memory-safe chunk token cache (WeakMap automatically garbage-collects with chunks)
+const chunkTokenCache = new WeakMap<RAGChunk, string[]>();
+
+function getChunkTokens(chunk: RAGChunk): string[] {
+  let tokens = chunkTokenCache.get(chunk);
+  if (!tokens) {
+    tokens = tokenize(chunk.content);
+    chunkTokenCache.set(chunk, tokens);
+  }
+  return tokens;
+}
+
 /**
  * Retrieves the top K most relevant chunks for a user query using TF-IDF ranking.
  */
@@ -165,42 +177,49 @@ export function retrieveRelevantChunks(
   const queryTerms = tokenize(query);
   if (queryTerms.length === 0) return [];
 
-  // 1. Calculate Document Frequency (DF) for query terms across chunks
+  // Pre-index chunk tokens and sets for fast retrieval
+  const chunkData = chunks.map(chunk => {
+    const tokens = getChunkTokens(chunk);
+    const tokenFreq: Record<string, number> = {};
+    for (const t of tokens) {
+      tokenFreq[t] = (tokenFreq[t] || 0) + 1;
+    }
+    return {
+      chunk,
+      tokens,
+      tokenFreq,
+      tokenSet: new Set(tokens)
+    };
+  });
+
+  // Fast O(1) Document Frequency (DF) calculation via Set lookups
   const df: Record<string, number> = {};
   for (const term of queryTerms) {
-    df[term] = 0;
-    for (const chunk of chunks) {
-      if (chunk.content.toLowerCase().includes(term)) {
-        df[term]++;
-      }
+    let count = 0;
+    for (const cd of chunkData) {
+      if (cd.tokenSet.has(term)) count++;
     }
+    df[term] = count;
   }
 
   const N = chunks.length;
-  const scoredChunks = chunks.map(chunk => {
-    const chunkTokens = tokenize(chunk.content);
-    const chunkTermFreq: Record<string, number> = {};
-    for (const t of chunkTokens) {
-      chunkTermFreq[t] = (chunkTermFreq[t] || 0) + 1;
-    }
-
+  const scoredChunks = chunkData.map(cd => {
     let score = 0;
     for (const term of queryTerms) {
-      const tf = (chunkTermFreq[term] || 0) / Math.max(chunkTokens.length, 1);
-      // IDF calculation
+      const tf = (cd.tokenFreq[term] || 0) / Math.max(cd.tokens.length, 1);
       const idf = Math.log((N + 1) / ((df[term] || 0) + 1)) + 1;
       let termScore = tf * idf;
 
       // Title match boost
-      if (chunk.sectionTitle.toLowerCase().includes(term)) {
+      if (cd.chunk.sectionTitle.toLowerCase().includes(term)) {
         termScore *= 2.5;
       }
       score += termScore;
     }
 
     // Extract best snippet (the line or sentence with the highest term overlap)
-    const sentences = chunk.content.split(/[.\n]+/);
-    let bestSentence = chunk.content.slice(0, 150);
+    const sentences = cd.chunk.content.split(/[.\n]+/);
+    let bestSentence = cd.chunk.content.slice(0, 150);
     let bestCount = 0;
 
     for (const s of sentences) {
@@ -216,7 +235,7 @@ export function retrieveRelevantChunks(
     }
 
     return {
-      chunk,
+      chunk: cd.chunk,
       score,
       snippet: bestSentence.length > 200 ? bestSentence.slice(0, 200) + '...' : bestSentence
     };

@@ -1,6 +1,18 @@
 import { describe, it, expect } from 'vitest';
 import { chunkLegalDocument, retrieveRelevantChunks } from '../../src/services/ragService';
-import { LRUCache, documentChunkCache, queryResultCache } from '../../src/utils/cacheManager';
+import {
+  LRUCache,
+  documentChunkCache,
+  queryResultCache,
+  documentAnalysisCache,
+  aiResponseCache,
+  comparisonResultCache,
+  clearAllCaches,
+  getGlobalCacheTelemetry
+} from '../../src/utils/cacheManager';
+import { analyzeDocument, askContextQuestion } from '../../src/services/aiService';
+import { compareLegalDocuments } from '../../src/services/documentComparison';
+import { redactPII } from '../../src/utils/piiRedactor';
 
 describe('Efficiency: Performance, Token Economy & Retrieval Speed', () => {
   const sampleDocument = `
@@ -104,5 +116,93 @@ describe('Efficiency: LRUCache Eviction & Memory Hygiene', () => {
     cache.clear();
     expect(cache.size()).toBe(0);
     expect(cache.get('test')).toBeUndefined();
+  });
+
+  it('wipes all global specialized caches simultaneously with clearAllCaches()', () => {
+    documentChunkCache.set('k1', []);
+    queryResultCache.set('k2', []);
+    documentAnalysisCache.set('k3', {} as any);
+    aiResponseCache.set('k4', {} as any);
+    comparisonResultCache.set('k5', {} as any);
+
+    expect(documentChunkCache.size()).toBeGreaterThan(0);
+    expect(queryResultCache.size()).toBeGreaterThan(0);
+
+    clearAllCaches();
+
+    const telemetry = getGlobalCacheTelemetry();
+    expect(telemetry.documentChunks.size).toBe(0);
+    expect(telemetry.queryResults.size).toBe(0);
+    expect(telemetry.documentAnalysis?.size).toBe(0);
+    expect(telemetry.aiResponse?.size).toBe(0);
+    expect(telemetry.comparisonResult?.size).toBe(0);
+  });
+});
+
+describe('Efficiency: Sub-Millisecond Analysis & Comparison Memoization', () => {
+  it('resolves repeat document analysis in < 2ms via documentAnalysisCache', async () => {
+    const docText = "1. Lease Terms. Monthly rent is Rs. 25,000 payable by the 5th of each month. 2. Lock-in period of 11 months.";
+    clearAllCaches();
+
+    // First call primes the cache
+    const firstResult = await analyzeDocument(docText, 'sample.txt', docText.length);
+    expect(firstResult.documentType).toBeDefined();
+
+    // Second call must hit the cache immediately
+    const start = performance.now();
+    const secondResult = await analyzeDocument(docText, 'sample.txt', docText.length);
+    const duration = performance.now() - start;
+
+    expect(duration).toBeLessThan(2);
+    expect(secondResult).toBe(firstResult);
+  });
+
+  it('resolves repeat document comparisons in < 2ms via comparisonResultCache', () => {
+    const docA = "Section 1: Termination upon 30 days notice.";
+    const docB = "Section 1: Early termination lock-in of 12 months with full deposit forfeiture.";
+    clearAllCaches();
+
+    // First comparison primes the cache
+    const firstComp = compareLegalDocuments('Doc A', docA, 'Doc B', docB);
+    expect(firstComp.differences.length).toBeGreaterThan(0);
+
+    // Second comparison must hit the cache immediately
+    const start = performance.now();
+    const secondComp = compareLegalDocuments('Doc A', docA, 'Doc B', docB);
+    const duration = performance.now() - start;
+
+    expect(duration).toBeLessThan(2);
+    expect(secondComp).toBe(firstComp);
+  });
+
+  it('resolves repeat AI legal questions in < 2ms via aiResponseCache', async () => {
+    const question = "Can my landlord evict me without notice?";
+    clearAllCaches();
+
+    // First query primes the cache
+    const firstAnswer = await askContextQuestion(question, null);
+    expect(firstAnswer.text).toContain('Section 106');
+
+    // Second query must hit the cache immediately
+    const start = performance.now();
+    const secondAnswer = await askContextQuestion(question, null);
+    const duration = performance.now() - start;
+
+    expect(duration).toBeLessThan(2);
+    expect(secondAnswer.text).toBe(firstAnswer.text);
+  });
+
+  it('short-circuits PII redaction in under 1ms when text contains no digits or @', () => {
+    const plainLegalEssay = `The Supreme Court of India in multiple landmark judgments has reiterated that 
+    liberty under Article twenty-one and the right to practice any trade under Article nineteen of the Constitution
+    are fundamental guarantees. No private contract can curtail these constitutional guarantees.`.repeat(10);
+
+    const start = performance.now();
+    const result = redactPII(plainLegalEssay);
+    const duration = performance.now() - start;
+
+    expect(duration).toBeLessThan(2);
+    expect(result.totalRedactions).toBe(0);
+    expect(result.sanitizedText).toBe(plainLegalEssay);
   });
 });

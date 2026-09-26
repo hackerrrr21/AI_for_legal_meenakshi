@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { StitchHeader } from './components/common/StitchHeader';
 import { StitchFooter } from './components/common/StitchFooter';
 import { UserFlowBar, SCREEN_FLOW } from './components/common/UserFlowBar';
@@ -6,9 +6,7 @@ import { ErrorBoundary } from './components/common/ErrorBoundary';
 import { AccessibilityToolbar } from './components/common/AccessibilityToolbar';
 import { UserProfile } from './types/user';
 
-import { Screen01_Splash } from './components/screens/Screen01_Splash';
-import { Screen02_Login } from './components/screens/Screen02_Login';
-import { Screen03_SSO } from './components/screens/Screen03_SSO';
+// Core 7 Problem Statement Workspace Screens (Eagerly Loaded for Instant Performance)
 import { Screen04_Dashboard } from './components/screens/Screen04_Dashboard';
 import { Screen05_DocumentVault } from './components/screens/Screen05_DocumentVault';
 import { Screen06_AIAssistant } from './components/screens/Screen06_AIAssistant';
@@ -16,19 +14,24 @@ import { Screen07_DocumentAnalysis } from './components/screens/Screen07_Documen
 import { Screen08_ClauseInspector } from './components/screens/Screen08_ClauseInspector';
 import { Screen09_DocumentComparison } from './components/screens/Screen09_DocumentComparison';
 import { Screen10_ActionCenter } from './components/screens/Screen10_ActionCenter';
-import { Screen11_DocumentArchive } from './components/screens/Screen11_DocumentArchive';
-import { Screen12_LawLibrary } from './components/screens/Screen12_LawLibrary';
-import { Screen13_LawChapter } from './components/screens/Screen13_LawChapter';
-import { Screen14_LawLesson } from './components/screens/Screen14_LawLesson';
-import { Screen15_DoctrinalQuiz } from './components/screens/Screen15_DoctrinalQuiz';
-import { Screen16_FindCounsel } from './components/screens/Screen16_FindCounsel';
-import { Screen17_LawyerProfile } from './components/screens/Screen17_LawyerProfile';
-import { Screen18_LegalUpdates } from './components/screens/Screen18_LegalUpdates';
-import { Screen19_ArticleDetails } from './components/screens/Screen19_ArticleDetails';
-import { Screen20_UserProfile } from './components/screens/Screen20_UserProfile';
-import { Screen21_Settings } from './components/screens/Screen21_Settings';
-import { Screen22_TermsCovenant } from './components/screens/Screen22_TermsCovenant';
-import { Screen23_LegalDisclaimer } from './components/screens/Screen23_LegalDisclaimer';
+
+// Code Splitting & Dynamic Imports for Secondary Flow Screens to Maximize Initial Load Efficiency
+const Screen01_Splash = lazy(() => import('./components/screens/Screen01_Splash').then(m => ({ default: m.Screen01_Splash })));
+const Screen02_Login = lazy(() => import('./components/screens/Screen02_Login').then(m => ({ default: m.Screen02_Login })));
+const Screen03_SSO = lazy(() => import('./components/screens/Screen03_SSO').then(m => ({ default: m.Screen03_SSO })));
+const Screen11_DocumentArchive = lazy(() => import('./components/screens/Screen11_DocumentArchive').then(m => ({ default: m.Screen11_DocumentArchive })));
+const Screen12_LawLibrary = lazy(() => import('./components/screens/Screen12_LawLibrary').then(m => ({ default: m.Screen12_LawLibrary })));
+const Screen13_LawChapter = lazy(() => import('./components/screens/Screen13_LawChapter').then(m => ({ default: m.Screen13_LawChapter })));
+const Screen14_LawLesson = lazy(() => import('./components/screens/Screen14_LawLesson').then(m => ({ default: m.Screen14_LawLesson })));
+const Screen15_DoctrinalQuiz = lazy(() => import('./components/screens/Screen15_DoctrinalQuiz').then(m => ({ default: m.Screen15_DoctrinalQuiz })));
+const Screen16_FindCounsel = lazy(() => import('./components/screens/Screen16_FindCounsel').then(m => ({ default: m.Screen16_FindCounsel })));
+const Screen17_LawyerProfile = lazy(() => import('./components/screens/Screen17_LawyerProfile').then(m => ({ default: m.Screen17_LawyerProfile })));
+const Screen18_LegalUpdates = lazy(() => import('./components/screens/Screen18_LegalUpdates').then(m => ({ default: m.Screen18_LegalUpdates })));
+const Screen19_ArticleDetails = lazy(() => import('./components/screens/Screen19_ArticleDetails').then(m => ({ default: m.Screen19_ArticleDetails })));
+const Screen20_UserProfile = lazy(() => import('./components/screens/Screen20_UserProfile').then(m => ({ default: m.Screen20_UserProfile })));
+const Screen21_Settings = lazy(() => import('./components/screens/Screen21_Settings').then(m => ({ default: m.Screen21_Settings })));
+const Screen22_TermsCovenant = lazy(() => import('./components/screens/Screen22_TermsCovenant').then(m => ({ default: m.Screen22_TermsCovenant })));
+const Screen23_LegalDisclaimer = lazy(() => import('./components/screens/Screen23_LegalDisclaimer').then(m => ({ default: m.Screen23_LegalDisclaimer })));
 
 import { SAMPLE_DOCUMENTS } from './data/sampleDocuments';
 import { analyzeDocument } from './services/aiService';
@@ -172,6 +175,12 @@ export const App: React.FC = () => {
       {/* 2. Active Screen In Numbered Flow */}
       <main className="flex-1 w-full" id="main-content">
         <ErrorBoundary>
+          <Suspense fallback={
+            <div className="min-h-[50vh] flex flex-col items-center justify-center text-xs text-[#506358] gap-2">
+              <span className="w-5 h-5 border-2 border-[#1b382b] border-t-transparent rounded-full animate-spin"></span>
+              <span>Loading legal workspace...</span>
+            </div>
+          }>
         {currentScreenId === 'splash' && (
           <Screen01_Splash
             onNavigate={navigateTo}
@@ -324,7 +333,8 @@ export const App: React.FC = () => {
             userProfile={userProfile}
           />
         )}
-              </ErrorBoundary>
+          </Suspense>
+        </ErrorBoundary>
       </main>
 
       {/* 3. Counsel Editorial Institutional Footer */}

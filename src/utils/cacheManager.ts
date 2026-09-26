@@ -101,15 +101,30 @@ export interface QuerySearchResult {
 // Global specialized cache singletons
 export const documentChunkCache = new LRUCache<string, RAGChunk[]>(50, 60 * 60 * 1000);
 export const queryResultCache = new LRUCache<string, QuerySearchResult[]>(200, 30 * 60 * 1000);
+export const documentAnalysisCache = new LRUCache<string, any>(50, 60 * 60 * 1000);
+export const aiResponseCache = new LRUCache<string, any>(100, 30 * 60 * 1000);
+export const comparisonResultCache = new LRUCache<string, any>(50, 60 * 60 * 1000);
 
 export function clearAllCaches(): void {
   documentChunkCache.clear();
   queryResultCache.clear();
+  documentAnalysisCache.clear();
+  aiResponseCache.clear();
+  comparisonResultCache.clear();
 }
 
-export function getGlobalCacheTelemetry(): { documentChunks: CacheMetrics; queryResults: CacheMetrics } {
+export function getGlobalCacheTelemetry(): {
+  documentChunks: CacheMetrics;
+  queryResults: CacheMetrics;
+  documentAnalysis?: CacheMetrics;
+  aiResponse?: CacheMetrics;
+  comparisonResult?: CacheMetrics;
+} {
   return {
     documentChunks: documentChunkCache.getMetrics(),
-    queryResults: queryResultCache.getMetrics()
+    queryResults: queryResultCache.getMetrics(),
+    documentAnalysis: documentAnalysisCache.getMetrics(),
+    aiResponse: aiResponseCache.getMetrics(),
+    comparisonResult: comparisonResultCache.getMetrics()
   };
 }

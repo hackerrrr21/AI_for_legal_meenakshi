@@ -69,67 +69,85 @@ export function redactPII(text: string): RedactionResult {
     passport: 0
   };
 
+  // Algorithmic optimization: Pre-filter checks
+  const hasDigits = /\d/.test(text);
+  const hasAt = text.includes('@');
+
+  // If text contains neither digits nor @, no statutory PII regex can match
+  if (!hasDigits && !hasAt) {
+    return {
+      sanitizedText: text,
+      totalRedactions: 0,
+      redactionDetails: details
+    };
+  }
+
   let sanitized = text;
 
-  // 1. Redact Aadhaar
-  sanitized = sanitized.replace(AADHAAR_REGEX, () => {
-    details.aadhaar++;
-    return '[REDACTED_AADHAAR]';
-  });
+  // Only scan email if '@' is present
+  if (hasAt) {
+    sanitized = sanitized.replace(EMAIL_REGEX, () => {
+      details.email++;
+      return '[REDACTED_EMAIL]';
+    });
+  }
 
-  // 2. Redact PAN
-  sanitized = sanitized.replace(PAN_REGEX, () => {
-    details.pan++;
-    return '[REDACTED_PAN]';
-  });
+  // Only scan numeric-dependent statutory identifiers if digits are present
+  if (hasDigits) {
+    // 1. Redact Aadhaar
+    sanitized = sanitized.replace(AADHAAR_REGEX, () => {
+      details.aadhaar++;
+      return '[REDACTED_AADHAAR]';
+    });
 
-  // 3. Redact IFSC
-  sanitized = sanitized.replace(IFSC_REGEX, () => {
-    details.ifsc++;
-    return '[REDACTED_IFSC]';
-  });
+    // 2. Redact PAN
+    sanitized = sanitized.replace(PAN_REGEX, () => {
+      details.pan++;
+      return '[REDACTED_PAN]';
+    });
 
-  // 4. Redact Credit/Debit Card Numbers
-  sanitized = sanitized.replace(CARD_REGEX, () => {
-    details.card++;
-    return '[REDACTED_PAYMENT_CARD]';
-  });
+    // 3. Redact IFSC
+    sanitized = sanitized.replace(IFSC_REGEX, () => {
+      details.ifsc++;
+      return '[REDACTED_IFSC]';
+    });
 
-  // 5. Redact Bank Account Numbers in Banking Context
-  sanitized = sanitized.replace(BANK_ACCOUNT_CONTEXT_REGEX, (match, accNum) => {
-    details.bankAccount++;
-    return match.replace(accNum, '[REDACTED_BANK_ACCOUNT]');
-  });
+    // 4. Redact Credit/Debit Card Numbers
+    sanitized = sanitized.replace(CARD_REGEX, () => {
+      details.card++;
+      return '[REDACTED_PAYMENT_CARD]';
+    });
 
-  // 6. Redact Email Addresses
-  sanitized = sanitized.replace(EMAIL_REGEX, () => {
-    details.email++;
-    return '[REDACTED_EMAIL]';
-  });
+    // 5. Redact Bank Account Numbers in Banking Context
+    sanitized = sanitized.replace(BANK_ACCOUNT_CONTEXT_REGEX, (match, accNum) => {
+      details.bankAccount++;
+      return match.replace(accNum, '[REDACTED_BANK_ACCOUNT]');
+    });
 
-  // 7. Redact Phone Numbers
-  sanitized = sanitized.replace(PHONE_REGEX, () => {
-    details.phone++;
-    return '[REDACTED_PHONE]';
-  });
+    // 6. Redact Phone Numbers
+    sanitized = sanitized.replace(PHONE_REGEX, () => {
+      details.phone++;
+      return '[REDACTED_PHONE]';
+    });
 
-  // 8. Redact Voter ID (EPIC)
-  sanitized = sanitized.replace(VOTER_ID_REGEX, () => {
-    details.voterId++;
-    return '[REDACTED_VOTER_ID]';
-  });
+    // 7. Redact Voter ID (EPIC)
+    sanitized = sanitized.replace(VOTER_ID_REGEX, () => {
+      details.voterId++;
+      return '[REDACTED_VOTER_ID]';
+    });
 
-  // 9. Redact Driving License
-  sanitized = sanitized.replace(DRIVING_LICENSE_REGEX, () => {
-    details.drivingLicense++;
-    return '[REDACTED_DRIVING_LICENSE]';
-  });
+    // 8. Redact Driving License
+    sanitized = sanitized.replace(DRIVING_LICENSE_REGEX, () => {
+      details.drivingLicense++;
+      return '[REDACTED_DRIVING_LICENSE]';
+    });
 
-  // 10. Redact Passport
-  sanitized = sanitized.replace(PASSPORT_REGEX, () => {
-    details.passport++;
-    return '[REDACTED_PASSPORT]';
-  });
+    // 9. Redact Passport
+    sanitized = sanitized.replace(PASSPORT_REGEX, () => {
+      details.passport++;
+      return '[REDACTED_PASSPORT]';
+    });
+  }
 
   const totalRedactions = Object.values(details).reduce((sum, count) => sum + count, 0);
 

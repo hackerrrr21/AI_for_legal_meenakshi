@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   GitCompare, 
   ShieldAlert, 
@@ -26,14 +26,18 @@ export const DocumentComparisonView: React.FC<DocumentComparisonViewProps> = ({
     SAMPLE_DOCUMENTS.find(d => d.id === 'sample-lease-harsh')?.id || SAMPLE_DOCUMENTS[1].id
   );
 
-  const counterpartDoc = SAMPLE_DOCUMENTS.find(d => d.id === selectedCounterpartId) || SAMPLE_DOCUMENTS[1];
+  const counterpartDoc = useMemo(() => {
+    return SAMPLE_DOCUMENTS.find(d => d.id === selectedCounterpartId) || SAMPLE_DOCUMENTS[1];
+  }, [selectedCounterpartId]);
 
-  const comparisonResult: DocumentComparisonResult = compareLegalDocuments(
-    currentDocTitle,
-    currentDocText,
-    counterpartDoc.title,
-    counterpartDoc.content
-  );
+  const comparisonResult: DocumentComparisonResult = useMemo(() => {
+    return compareLegalDocuments(
+      currentDocTitle,
+      currentDocText,
+      counterpartDoc.title,
+      counterpartDoc.content
+    );
+  }, [currentDocTitle, currentDocText, counterpartDoc.title, counterpartDoc.content]);
 
   return (
     <div className="bg-white rounded-2xl shadow-trust border border-slate-200 p-6 space-y-6">

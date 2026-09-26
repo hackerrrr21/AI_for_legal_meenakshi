@@ -10,6 +10,7 @@ import { ChatMessage, Citation } from '../types/chat';
 import { sanitizeUntrustedContent, wrapInSecurityEnvelopes } from '../utils/promptInjectionDefense';
 import { redactPII } from '../utils/piiRedactor';
 import { retrieveRelevantChunks, formatCitations, getIndianLegalCorpusChunks } from './ragService';
+import { documentAnalysisCache, aiResponseCache } from '../utils/cacheManager';
 
 const GEMINI_API_KEY = (import.meta.env.VITE_GEMINI_API_KEY as string) || '';
 
@@ -69,6 +70,12 @@ export async function analyzeDocument(
   fileName: string,
   fileSize: number
 ): Promise<DocumentAnalysisResult> {
+  const cacheKey = `${fileName}::${fileSize}::${rawText.length}::${rawText.slice(0, 100)}`;
+  const cachedAnalysis = documentAnalysisCache.get(cacheKey);
+  if (cachedAnalysis) {
+    return cachedAnalysis as DocumentAnalysisResult;
+  }
+
   // Security: Redact PII (Aadhaar, PAN, Bank Accounts) under DPDP Act 2023
   const piiCleaned = redactPII(rawText);
   const sanitization = sanitizeUntrustedContent(piiCleaned.sanitizedText);
@@ -78,14 +85,19 @@ export async function analyzeDocument(
   if (effectiveKey && effectiveKey.length > 10) {
     try {
       const geminiResult = await callGeminiDocumentAnalysis(cleanText, fileName, fileSize, effectiveKey);
-      if (geminiResult) return geminiResult;
+      if (geminiResult) {
+        documentAnalysisCache.set(cacheKey, geminiResult);
+        return geminiResult;
+      }
     } catch (err) {
       console.warn('Gemini API call failed or timed out. Falling back to built-in Legal Intelligence Engine:', err);
     }
   }
 
   // Built-in Deterministic Legal Intelligence Engine
-  return runDeterministicLegalAnalysis(cleanText, fileName, fileSize);
+  const result = runDeterministicLegalAnalysis(cleanText, fileName, fileSize);
+  documentAnalysisCache.set(cacheKey, result);
+  return result;
 }
 
 /**
@@ -105,6 +117,11 @@ export async function askContextQuestion(
   const retrieved = retrieveRelevantChunks(safeQuestion, allChunks, 3);
   const citations = formatCitations(retrieved);
   const effectiveKey = getEffectiveGeminiKey();
+  const cacheKey = `${safeQuestion.trim().toLowerCase()}::${fullText.length}::${chunks.length}::${previousMessages.length}`;
+  const cachedResponse = aiResponseCache.get(cacheKey);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
 
   if (effectiveKey && effectiveKey.length > 10) {
     try {
@@ -174,7 +191,9 @@ Include a simple note at the end:
         if (text) {
           const cleanedText = cleanLegalText(text);
           const followUps = generateSmartFollowUps(safeQuestion, docAnalysis);
-          return { text: cleanedText, citations, suggestedFollowUps: followUps };
+          const geminiResult = { text: cleanedText, citations, suggestedFollowUps: followUps };
+          aiResponseCache.set(cacheKey, geminiResult);
+          return geminiResult;
         }
       }
     } catch (e) {
@@ -183,7 +202,9 @@ Include a simple note at the end:
   }
 
   // Local Grounded Legal Synthesis Engine (answers ANY legal question in plain English)
-  return synthesizeLocalGroundedAnswer(safeQuestion, docAnalysis, retrieved, citations);
+  const localAnswer = synthesizeLocalGroundedAnswer(safeQuestion, docAnalysis, retrieved, citations);
+  aiResponseCache.set(cacheKey, localAnswer);
+  return localAnswer;
 }
 
 /**

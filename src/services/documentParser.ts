@@ -2,8 +2,16 @@
  * Document parser service supporting PDF, DOCX, and TXT files
  * with strict format and size validation.
  */
-import mammoth from 'mammoth';
 import { cleanDocumentText } from '../utils/textSanitizer';
+
+let mammothLib: typeof import('mammoth') | null = null;
+
+async function getMammoth() {
+  if (!mammothLib) {
+    mammothLib = await import('mammoth');
+  }
+  return mammothLib;
+}
 
 // Dynamically load pdfjs to keep bundle flexible
 interface PDFTextItem {
@@ -66,6 +74,7 @@ export async function parseUploadedFile(file: File): Promise<ParsedDocument> {
     extractedText = await file.text();
   } else if (nameLower.endsWith('.docx') || file.type.includes('wordprocessingml')) {
     const arrayBuffer = await file.arrayBuffer();
+    const mammoth = await getMammoth();
     const result = await mammoth.extractRawText({ arrayBuffer });
     extractedText = result.value;
   } else if (nameLower.endsWith('.pdf') || file.type === 'application/pdf') {
