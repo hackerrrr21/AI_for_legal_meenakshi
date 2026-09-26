@@ -225,140 +225,195 @@ export const Screen04_Dashboard: React.FC<Screen04_DashboardProps> = ({
           </div>
         </div>
 
-        {/* The Four Core Pillars */}
+        {/* Problem Statement 7-Capability Grid: Understand, Compare, Navigate */}
         <div>
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-4">
             <div>
-              <span className="text-xs uppercase tracking-wider text-[#506358] font-bold">
-                Main Features
+              <span className="text-xs uppercase tracking-wider text-[#1b382b] font-bold flex items-center gap-1.5">
+                <StitchIcon name="auto_awesome" className="text-[16px] text-[#1b382b]" />
+                <span>Core Problem Statement Capabilities</span>
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#181d1a] font-semibold">
-                Four Core Actions: Understand, Learn, Act
+              <h3 className="font-serif text-xl sm:text-2xl text-[#181d1a] font-semibold mt-0.5">
+                Understand, Compare &amp; Navigate Legal Documents
               </h3>
             </div>
+            <span className="text-xs text-[#506358] font-medium bg-[#f0f5f0] px-3 py-1 rounded-full border border-[#d2e2d5] self-start sm:self-auto">
+              Statutory Note: Information &amp; Assistance, Not Legal Advice
+            </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
-            {/* Pillar 1: AI Legal Assistant */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {/* Capability 1: Simplifying Complex Legal Documents */}
+            <div
+              onClick={() => onNavigate('document-analysis')}
+              className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
+            >
+              <div className="space-y-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
+                  <StitchIcon name="description" className="text-[22px]" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-[#506358] uppercase font-bold tracking-wider">Use Case 1</div>
+                  <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
+                    1. Simplify Complex Documents
+                  </h4>
+                  <p className="text-xs text-[#424844] mt-1 leading-relaxed">
+                    Translate dense legal contracts into everyday plain English. Side-by-side comparison of original text vs clear meaning.
+                  </p>
+                </div>
+              </div>
+              <div className="pt-3 mt-3 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
+                <span>Simplify Document</span>
+                <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* Capability 2: Comparing Contracts, Agreements, or Policies */}
+            <div
+              onClick={() => onNavigate('doc-comparison')}
+              className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
+            >
+              <div className="space-y-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
+                  <StitchIcon name="compare_arrows" className="text-[22px]" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-[#506358] uppercase font-bold tracking-wider">Use Case 2</div>
+                  <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
+                    2. Compare Contract Versions
+                  </h4>
+                  <p className="text-xs text-[#424844] mt-1 leading-relaxed">
+                    Compare original drafts against revised counter-proposals. Spot modified clauses, added penalties, and risk shifts.
+                  </p>
+                </div>
+              </div>
+              <div className="pt-3 mt-3 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
+                <span>Compare Versions</span>
+                <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* Capability 3: Highlighting Important Clauses, Obligations & Risks */}
+            <div
+              onClick={() => onNavigate('clause-inspector')}
+              className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
+            >
+              <div className="space-y-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[#ba1a1a] text-white flex items-center justify-center shadow-sm">
+                  <StitchIcon name="rule" className="text-[22px]" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-[#ba1a1a] uppercase font-bold tracking-wider">Use Case 3</div>
+                  <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#ba1a1a] transition">
+                    3. Highlight Clauses &amp; Risks
+                  </h4>
+                  <p className="text-xs text-[#424844] mt-1 leading-relaxed">
+                    Automatically spot unfair terms like void non-competes under Section 27, harsh deposit forfeitures, and hidden obligations.
+                  </p>
+                </div>
+              </div>
+              <div className="pt-3 mt-3 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#ba1a1a]">
+                <span>Inspect Clause Risks</span>
+                <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* Capability 4: Answering Questions Based on Provided Documents */}
             <div
               onClick={() => onNavigate('ai-assistant')}
               className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
             >
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
+              <div className="space-y-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
                   <StitchIcon name="chat" className="text-[22px]" />
                 </div>
                 <div>
+                  <div className="text-[10px] font-mono text-[#506358] uppercase font-bold tracking-wider">Use Case 4</div>
                   <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    1. AI Legal Assistant
+                    4. Document Q&amp;A Assistant
                   </h4>
-                  <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
-                    Ask any question about your rights, agreements, or legal disputes in simple words. Works with or without documents.
+                  <p className="text-xs text-[#424844] mt-1 leading-relaxed">
+                    Ask questions grounded directly in your uploaded legal file. GenAI cites exact clauses and statutory protections with zero hallucinations.
                   </p>
                 </div>
-                <div className="p-2 rounded bg-[#f0f5f0] border border-[#e2ddd5]">
-                  <span className="text-[11px] text-[#506358] flex items-center gap-1.5">
-                    <StitchIcon name="mic" className="text-[14px] text-[#1b382b]" />
-                    <span>Voice Input &amp; Instant Answers</span>
-                  </span>
-                </div>
               </div>
-
-              <div className="pt-3 mt-4 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
-                <span>Start Legal Chat</span>
+              <div className="pt-3 mt-3 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
+                <span>Ask Document Q&amp;A</span>
                 <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
 
-            {/* Pillar 2: Find Counsel Nearby */}
+            {/* Capability 5: Helping Users Understand Options & Potential Next Steps */}
             <div
-              onClick={() => onNavigate('find-counsel')}
+              onClick={() => onNavigate('action-center')}
               className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
             >
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
+              <div className="space-y-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
+                  <StitchIcon name="navigation" className="text-[22px]" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-[#506358] uppercase font-bold tracking-wider">Use Case 5</div>
+                  <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
+                    5. Understand Options &amp; Steps
+                  </h4>
+                  <p className="text-xs text-[#424844] mt-1 leading-relaxed">
+                    Clear guidance on your legal options: formal notice issuance, consumer e-Daakhil filing, mediation, and cybercrime 1930 recovery.
+                  </p>
+                </div>
+              </div>
+              <div className="pt-3 mt-3 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
+                <span>Explore Next Steps</span>
+                <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* Capability 6: Generating Summaries, Checklists & Actionable Outputs */}
+            <div
+              onClick={() => onNavigate('action-center')}
+              className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
+            >
+              <div className="space-y-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
+                  <StitchIcon name="checklist" className="text-[22px]" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-[#506358] uppercase font-bold tracking-wider">Use Case 6</div>
+                  <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
+                    6. Summaries &amp; Checklists
+                  </h4>
+                  <p className="text-xs text-[#424844] mt-1 leading-relaxed">
+                    1-click generation of key date calendars, party obligations matrices, pre-signing checklists, and executive summaries.
+                  </p>
+                </div>
+              </div>
+              <div className="pt-3 mt-3 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
+                <span>View Checklists</span>
+                <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            {/* Capability 7: Preparing Information or Questions for a Legal Professional */}
+            <div
+              onClick={() => onNavigate('action-center')}
+              className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group md:col-span-2 lg:col-span-1 xl:col-span-2"
+            >
+              <div className="space-y-2.5">
+                <div className="w-10 h-10 rounded-lg bg-[#281800] text-[#fedeb2] flex items-center justify-center shadow-sm">
                   <StitchIcon name="person_search" className="text-[22px]" />
                 </div>
                 <div>
+                  <div className="text-[10px] font-mono text-[#506358] uppercase font-bold tracking-wider">Use Case 7</div>
                   <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    2. Find Lawyers Nearby
+                    7. Prepare for a Legal Professional
                   </h4>
-                  <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
-                    Connect with verified advocates in your area for direct consultation on tenancy, employment, or disputes.
+                  <p className="text-xs text-[#424844] mt-1 leading-relaxed">
+                    Generate an Advocate Consultation Dossier containing your document summary, flagged high-risk clauses, statutory citations, and specific targeted questions to ask your advocate.
                   </p>
                 </div>
-                <div className="p-2 rounded bg-[#f0f5f0] border border-[#e2ddd5]">
-                  <span className="text-[11px] text-[#506358] font-medium flex items-center gap-1">
-                    <StitchIcon name="pin_drop" className="text-[14px] text-[#1b382b]" />
-                    <span>Verified High Court Advocates</span>
-                  </span>
-                </div>
               </div>
-
-              <div className="pt-3 mt-4 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
-                <span>Find Advocates</span>
-                <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* Pillar 3: Legal Articles & Updates */}
-            <div
-              onClick={() => onNavigate('legal-updates')}
-              className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
-            >
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
-                  <StitchIcon name="newspaper" className="text-[22px]" />
-                </div>
-                <div>
-                  <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    3. Legal Articles &amp; Updates
-                  </h4>
-                  <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
-                    Easy-to-read guides explaining landmark Supreme Court judgments, tenant rights, and workplace laws.
-                  </p>
-                </div>
-                <div className="p-2 rounded bg-[#f0f5f0] border border-[#e2ddd5]">
-                  <span className="text-[11px] text-[#506358] font-medium flex items-center gap-1">
-                    <StitchIcon name="article" className="text-[14px] text-[#1b382b]" />
-                    <span>Plain English Legal Articles</span>
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-3 mt-4 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
-                <span>Read Articles</span>
-                <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-
-            {/* Pillar 4: Law Library & Juris Academy */}
-            <div
-              onClick={() => onNavigate('law-library')}
-              className="flex flex-col justify-between bg-white p-5 rounded-xl border border-[#e2ddd5] shadow-sm hover:border-[#1b382b] hover:shadow-md transition cursor-pointer group"
-            >
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded bg-[#1b382b] text-white flex items-center justify-center shadow-sm">
-                  <StitchIcon name="school" className="text-[22px]" />
-                </div>
-                <div>
-                  <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    4. Learn Law
-                  </h4>
-                  <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
-                    Fun, bite-sized lessons explaining the Constitution, police powers, tenant rights, and legal scenarios.
-                  </p>
-                </div>
-                <div className="p-2 rounded bg-[#f0f5f0] border border-[#e2ddd5]">
-                  <span className="text-[11px] text-[#506358] font-medium flex items-center gap-1">
-                    <StitchIcon name="local_fire_department" className="text-[14px] text-[#c57b28]" />
-                    <span>5 Day Streak • Lesson 2.4 Ready</span>
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-3 mt-4 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
-                <span>Start Learning</span>
+              <div className="pt-3 mt-3 border-t border-[#e2ddd5] flex items-center justify-between text-xs font-semibold text-[#1b382b]">
+                <span>Generate Advocate Brief</span>
                 <StitchIcon name="arrow_forward" className="text-[16px] group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

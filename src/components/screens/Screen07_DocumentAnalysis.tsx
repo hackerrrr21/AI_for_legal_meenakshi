@@ -46,27 +46,27 @@ export const Screen07_DocumentAnalysis: React.FC<Screen07_DocumentAnalysisProps>
             <nav className="flex flex-col gap-1">
               <button onClick={() => onNavigate('dashboard')} className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left">
                 <StitchIcon name="space_dashboard" className="text-[18px]" />
-                <span>Dashboard</span>
-              </button>
-              <button onClick={() => onNavigate('ai-assistant')} className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left">
-                <StitchIcon name="chat" className="text-[18px]" />
-                <span>AI Legal Chat</span>
+                <span>Overview Hub</span>
               </button>
               <button onClick={() => onNavigate('document-analysis')} className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold bg-[#1b382b] text-white shadow-sm text-left">
                 <StitchIcon name="description" className="text-[18px]" />
-                <span>Document Summary</span>
+                <span>1. Simplify Docs</span>
               </button>
               <button onClick={() => onNavigate('clause-inspector')} className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left">
                 <StitchIcon name="find_in_page" className="text-[18px]" />
-                <span>Clause Inspector</span>
+                <span>2. Highlight Risks</span>
               </button>
               <button onClick={() => onNavigate('doc-comparison')} className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left">
                 <StitchIcon name="difference" className="text-[18px]" />
-                <span>Compare Versions</span>
+                <span>3. Compare Versions</span>
+              </button>
+              <button onClick={() => onNavigate('ai-assistant')} className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left">
+                <StitchIcon name="chat" className="text-[18px]" />
+                <span>4. Document Q&amp;A</span>
               </button>
               <button onClick={() => onNavigate('action-center')} className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left">
                 <StitchIcon name="checklist" className="text-[18px]" />
-                <span>Action Checklist</span>
+                <span>5. Checklists &amp; Lawyer Prep</span>
               </button>
             </nav>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StitchHeader } from './components/common/StitchHeader';
 import { StitchFooter } from './components/common/StitchFooter';
 import { UserFlowBar, SCREEN_FLOW } from './components/common/UserFlowBar';
@@ -36,8 +36,9 @@ import { chunkLegalDocument } from './services/ragService';
 import { DocumentAnalysisResult, RAGChunk } from './types/legal';
 
 export const App: React.FC = () => {
-  const [currentScreenIndex, setCurrentScreenIndex] = useState<number>(1); // Start on Screen 1 (Splash Screen)
-  const [currentScreenId, setCurrentScreenId] = useState<string>('splash');
+  // Start directly on Screen 4 (GenAI Legal Document Assistant Hub) for 100% Problem Statement alignment
+  const [currentScreenIndex, setCurrentScreenIndex] = useState<number>(4);
+  const [currentScreenId, setCurrentScreenId] = useState<string>('dashboard');
   
   const [userProfile, setUserProfile] = useState<UserProfile>({
     name: "Priya Sharma",
@@ -49,18 +50,37 @@ export const App: React.FC = () => {
   const [userXP, setUserXP] = useState<number>(450);
   const [streakDays] = useState<number>(5);
   const [activeAnalysis, setActiveAnalysis] = useState<DocumentAnalysisResult | null>(null);
-  const [activeDocText, setActiveDocText] = useState<string>('');
-  const [chunks, setChunks] = useState<RAGChunk[]>([]);
+  const [activeDocText, setActiveDocText] = useState<string>(SAMPLE_DOCUMENTS[0].content);
+  const [chunks, setChunks] = useState<RAGChunk[]>(() => chunkLegalDocument(SAMPLE_DOCUMENTS[0].content));
+
+  useEffect(() => {
+    // Pre-populate initial analysis for default tenancy contract so all screens are immediately interactive
+    analyzeDocument(SAMPLE_DOCUMENTS[0].content, `${SAMPLE_DOCUMENTS[0].title}.txt`, SAMPLE_DOCUMENTS[0].content.length)
+      .then(res => setActiveAnalysis(res))
+      .catch(err => console.error("Initial analysis error:", err));
+  }, []);
 
   const navigateTo = (pathOrId: string) => {
     const aliasMap: Record<string, string> = {
       'home': 'dashboard',
       'vault': 'document-vault',
+      'upload': 'document-vault',
       'assistant': 'ai-assistant',
+      'chat': 'ai-assistant',
+      'qa': 'ai-assistant',
       'analysis': 'document-analysis',
+      'simplify': 'document-analysis',
+      'summary': 'document-analysis',
       'inspector': 'clause-inspector',
+      'clauses': 'clause-inspector',
+      'risks': 'clause-inspector',
       'compare': 'doc-comparison',
+      'diff': 'doc-comparison',
       'actions': 'action-center',
+      'checklist': 'action-center',
+      'checklists': 'action-center',
+      'next-steps': 'action-center',
+      'prepare-lawyer': 'action-center',
       'archive': 'document-archive',
       'library': 'law-library',
       'learn': 'law-library',

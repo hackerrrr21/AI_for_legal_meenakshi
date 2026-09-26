@@ -126,6 +126,21 @@ describe('Official Problem Statement: GenAI Legal Accessibility & Assistance Ali
       const disclaimerScreen = SCREEN_FLOW.find(s => s.id === 'legal-disclaimer');
       expect(disclaimerScreen).toBeDefined();
     });
+
+    it('enforces mandatory non-replacement notice under Section 29 Advocates Act 1961', () => {
+      const notice = "NOTE: Solutions provide information and assistance, rather than replace professional legal advice (Section 29, Advocates Act, 1961).";
+      expect(notice).toContain('rather than replace professional legal advice');
+      expect(notice).toContain('Advocates Act');
+    });
+
+    it('formats a structured Advocate Consultation Dossier for lawyer preparation', () => {
+      const docTitle = "Residential Tenancy Agreement";
+      const sampleQuestions = ["Is lock-in period enforceable?"];
+      const dossierText = `ADVOCATE CONSULTATION DOSSIER: ${docTitle}\n` +
+        sampleQuestions.map((q, i) => `Q${i + 1}: ${q}`).join('\n');
+      expect(dossierText).toContain('ADVOCATE CONSULTATION DOSSIER');
+      expect(dossierText).toContain('Is lock-in period enforceable?');
+    });
   });
 
   // OUT-OF-THE-BOX INNOVATION

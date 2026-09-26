@@ -47,11 +47,11 @@ export const Screen10_ActionCenter: React.FC<Screen10_ActionCenterProps> = ({
             <span>/</span>
             <button onClick={() => onNavigate('ai-assistant')} className="hover:underline font-medium">Understand</button>
             <span>/</span>
-            <span className="font-semibold text-[#1b382b]">Action Checklist &amp; Lawyer Questions (Act)</span>
+            <span className="font-semibold text-[#1b382b]">Checklists, Next Steps &amp; Lawyer Prep (PS Use Cases 5, 6 &amp; 7)</span>
           </div>
           <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-[#f0f5f0] text-[#1b382b] font-medium text-[11px] border border-[#e2ddd5]">
             <StitchIcon name="checklist" className="text-[14px]" />
-            <span>Due Diligence Action Protocol</span>
+            <span>Problem Statement Use Cases 5, 6 &amp; 7</span>
           </div>
         </div>
       </div>

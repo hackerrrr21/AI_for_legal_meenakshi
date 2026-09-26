@@ -260,19 +260,22 @@ Type your question below or click any of the common situations on the left to st
             </span>
             <nav className="flex flex-col gap-1">
               <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('dashboard')} href="javascript:void(0)">
-                <span className="material-symbols-outlined text-[18px]">space_dashboard</span><span>Home Dashboard</span>
+                <span className="material-symbols-outlined text-[18px]">space_dashboard</span><span>Overview Hub</span>
               </a>
               <a aria-current="page" className="flex items-center gap-space-sm px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-semibold rounded font-body-sm text-body-sm" onClick={() => onNavigate('ai-assistant')} href="javascript:void(0)">
-                <span className="material-symbols-outlined text-[18px]">chat</span><span>Legal Chat</span>
+                <span className="material-symbols-outlined text-[18px]">chat</span><span>4. Document Q&amp;A</span>
               </a>
-              <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-vault')} href="javascript:void(0)">
-                <span className="material-symbols-outlined text-[18px]">upload_file</span><span>Upload Document</span>
+              <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('document-analysis')} href="javascript:void(0)">
+                <span className="material-symbols-outlined text-[18px]">description</span><span>1. Simplify Docs</span>
               </a>
-              <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('law-library')} href="javascript:void(0)">
-                <span className="material-symbols-outlined text-[18px]">menu_book</span><span>Learn Indian Law</span>
+              <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('clause-inspector')} href="javascript:void(0)">
+                <span className="material-symbols-outlined text-[18px]">rule</span><span>2. Highlight Risks</span>
               </a>
-              <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('find-counsel')} href="javascript:void(0)">
-                <span className="material-symbols-outlined text-[18px]">groups</span><span>Find a Lawyer</span>
+              <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('doc-comparison')} href="javascript:void(0)">
+                <span className="material-symbols-outlined text-[18px]">compare_arrows</span><span>3. Compare Versions</span>
+              </a>
+              <a className="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" onClick={() => onNavigate('action-center')} href="javascript:void(0)">
+                <span className="material-symbols-outlined text-[18px]">checklist</span><span>5. Checklists &amp; Lawyer Prep</span>
               </a>
             </nav>
           </div>

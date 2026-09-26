@@ -27,11 +27,13 @@ export const StitchHeader: React.FC<StitchHeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { path: 'dashboard', label: 'Home' },
-    { path: 'ai-assistant', label: 'Understand (AI Assistant)' },
-    { path: 'law-library', label: 'Learn (Indian Law & Rights)' },
-    { path: 'find-counsel', label: 'Act (Find Lawyers)' },
-    { path: 'legal-updates', label: 'Legal Articles' },
+    { path: 'dashboard', label: 'Overview' },
+    { path: 'document-analysis', label: '1. Simplify Docs' },
+    { path: 'clause-inspector', label: '2. Highlight Risks' },
+    { path: 'doc-comparison', label: '3. Compare Versions' },
+    { path: 'ai-assistant', label: '4. Document Q&A' },
+    { path: 'action-center', label: '5. Checklists & Next Steps' },
+    { path: 'legal-disclaimer', label: 'Legal Notice' },
   ];
 
   return (
@@ -47,31 +49,36 @@ export const StitchHeader: React.FC<StitchHeaderProps> = ({
             <div className="w-8 h-8 rounded-sm bg-[#1b382b] text-[#ffffff] flex items-center justify-center font-serif font-bold text-base shadow-sm">
               ⚖
             </div>
-            <span className="font-serif text-xl sm:text-2xl text-[#042217] tracking-tight font-semibold">
-              AdvoChat
-            </span>
+            <div className="flex flex-col text-left">
+              <span className="font-serif text-lg sm:text-xl text-[#042217] tracking-tight font-bold leading-none">
+                AdvoChat
+              </span>
+              <span className="text-[10px] text-[#506358] font-medium leading-none mt-0.5 hidden sm:inline">
+                GenAI Legal Document Assistant
+              </span>
+            </div>
           </button>
 
           <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#f0f5f0] text-[#506358] border border-[#e2ddd5]">
             <StitchIcon name="lock" className="text-[15px] text-[#1b382b]" />
             <span className="text-[11px] font-semibold text-[#506358]">
-              Private &amp; Secure
+              Private &amp; DPDP 2023 Verified
             </span>
           </div>
         </div>
 
-        {/* Core Workflow Stepper (Login -> Home -> Understand -> Learn -> Act) */}
-        <div className="hidden 2xl:flex items-center gap-1.5 px-3 py-1 rounded bg-[#e8f2ea] text-xs text-[#1b382b] font-medium border border-[#c3decb]" title="Hackathon Core Workflow">
-          <span className="font-bold text-[10px] uppercase tracking-wider text-[#142b21]">Workflow:</span>
-          <button onClick={() => onNavigate('login')} className="hover:underline">Login</button>
-          <span>→</span>
-          <button onClick={() => onNavigate('dashboard')} className="hover:underline font-bold">Home</button>
-          <span>→</span>
-          <button onClick={() => onNavigate('ai-assistant')} className="hover:underline font-bold">Understand</button>
-          <span>→</span>
-          <button onClick={() => onNavigate('law-library')} className="hover:underline font-bold">Learn</button>
-          <span>→</span>
-          <button onClick={() => onNavigate('find-counsel')} className="hover:underline font-bold">Act</button>
+        {/* Problem Statement 7-Capability Solution Ribbon */}
+        <div className="hidden 2xl:flex items-center gap-1.5 px-3 py-1 rounded bg-[#e8f2ea] text-xs text-[#1b382b] font-medium border border-[#c3decb]" title="Official Problem Statement Capabilities">
+          <span className="font-bold text-[10px] uppercase tracking-wider text-[#142b21]">PS Capabilities:</span>
+          <button onClick={() => onNavigate('document-analysis')} className="hover:underline font-semibold">1. Simplify</button>
+          <span>•</span>
+          <button onClick={() => onNavigate('clause-inspector')} className="hover:underline font-semibold">2. Risks</button>
+          <span>•</span>
+          <button onClick={() => onNavigate('doc-comparison')} className="hover:underline font-semibold">3. Compare</button>
+          <span>•</span>
+          <button onClick={() => onNavigate('ai-assistant')} className="hover:underline font-semibold">4. Q&amp;A</button>
+          <span>•</span>
+          <button onClick={() => onNavigate('action-center')} className="hover:underline font-semibold">5. Checklists &amp; Lawyer Prep</button>
         </div>
 
         {/* Desktop Navigation */}

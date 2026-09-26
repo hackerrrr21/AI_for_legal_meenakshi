@@ -46,7 +46,7 @@ export const UserFlowBar: React.FC<UserFlowBarProps> = ({
   onNavigateByIndex,
   onNavigateById
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const currentScreen = SCREEN_FLOW[currentScreenIndex - 1] || SCREEN_FLOW[3];
 
   const handlePrev = () => {

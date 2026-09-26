@@ -127,42 +127,49 @@ export const Screen05_DocumentVault: React.FC<Screen05_DocumentVaultProps> = ({
                 className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left"
               >
                 <StitchIcon name="space_dashboard" className="text-[18px]" />
-                <span>Dashboard</span>
-              </button>
-              <button 
-                onClick={() => onNavigate('ai-assistant')} 
-                className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left"
-              >
-                <StitchIcon name="chat" className="text-[18px]" />
-                <span>AI Legal Chat</span>
+                <span>Overview Hub</span>
               </button>
               <button 
                 onClick={() => onNavigate('document-vault')} 
                 className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold bg-[#1b382b] text-white shadow-sm text-left"
               >
                 <StitchIcon name="upload_file" className="text-[18px]" />
-                <span>Upload Document</span>
+                <span>Upload &amp; Ingest</span>
               </button>
               <button 
                 onClick={() => onNavigate('document-analysis')} 
                 className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left"
               >
                 <StitchIcon name="description" className="text-[18px]" />
-                <span>Document Summary</span>
+                <span>1. Simplify Docs</span>
               </button>
               <button 
-                onClick={() => onNavigate('law-library')} 
+                onClick={() => onNavigate('clause-inspector')} 
                 className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left"
               >
-                <StitchIcon name="menu_book" className="text-[18px]" />
-                <span>Learn Indian Law</span>
+                <StitchIcon name="rule" className="text-[18px]" />
+                <span>2. Highlight Risks</span>
               </button>
               <button 
-                onClick={() => onNavigate('find-counsel')} 
+                onClick={() => onNavigate('doc-comparison')} 
                 className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left"
               >
-                <StitchIcon name="groups" className="text-[18px]" />
-                <span>Find a Lawyer</span>
+                <StitchIcon name="compare_arrows" className="text-[18px]" />
+                <span>3. Compare Versions</span>
+              </button>
+              <button 
+                onClick={() => onNavigate('ai-assistant')} 
+                className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left"
+              >
+                <StitchIcon name="chat" className="text-[18px]" />
+                <span>4. Document Q&amp;A</span>
+              </button>
+              <button 
+                onClick={() => onNavigate('action-center')} 
+                className="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-semibold text-[#424844] hover:bg-[#ebefea] transition text-left"
+              >
+                <StitchIcon name="checklist" className="text-[18px]" />
+                <span>5. Checklists &amp; Lawyer Prep</span>
               </button>
             </nav>
           </div>

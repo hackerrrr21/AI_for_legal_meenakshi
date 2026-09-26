@@ -13,31 +13,39 @@ export const StitchFooter: React.FC<StitchFooterProps> = ({ onNavigate }) => {
             ⚖
           </div>
           <div>
-            <span className="font-serif font-bold text-sm text-[#042217] block">AdvoChat Institutional Legal Intelligence</span>
-            <span className="text-[11px] text-[#506358]">Compliant with Model Rule 1.6 & ABA Formal Opinion 477R (Secured Digital Enclave)</span>
+            <span className="font-serif font-bold text-sm text-[#042217] block">AdvoChat • GenAI Legal Document Assistant</span>
+            <span className="text-[11px] text-[#506358]">Grounded in Indian Law (Contract Act, BNS 2023, TP Act) • DPDP Act 2023 Privacy Compliant</span>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-4 text-xs font-medium">
-          <button onClick={() => onNavigate('legal-disclaimer')} className="hover:text-[#042217] transition">
-            Privilege Notice
+          <button onClick={() => onNavigate('document-analysis')} className="hover:text-[#042217] transition">
+            1. Simplify Docs
           </button>
           <span>•</span>
-          <button onClick={() => onNavigate('terms-covenant')} className="hover:text-[#042217] transition">
-            Terms & Covenant
+          <button onClick={() => onNavigate('clause-inspector')} className="hover:text-[#042217] transition">
+            2. Highlight Risks
           </button>
           <span>•</span>
-          <button onClick={() => onNavigate('settings')} className="hover:text-[#042217] transition">
-            Governance & Retention
+          <button onClick={() => onNavigate('doc-comparison')} className="hover:text-[#042217] transition">
+            3. Compare Versions
+          </button>
+          <span>•</span>
+          <button onClick={() => onNavigate('ai-assistant')} className="hover:text-[#042217] transition">
+            4. Document Q&amp;A
           </button>
           <span>•</span>
           <button onClick={() => onNavigate('action-center')} className="hover:text-[#042217] transition">
-            Action Center
+            5. Checklists &amp; Lawyer Prep
+          </button>
+          <span>•</span>
+          <button onClick={() => onNavigate('legal-disclaimer')} className="hover:text-[#042217] font-semibold text-[#1b382b] transition">
+            Statutory Disclaimer
           </button>
         </div>
 
-        <div className="text-[11px] text-[#727974] text-center md:text-right">
-          © 2026 AdvoChat Systems Corp. All rights reserved.
+        <div className="text-[11px] text-[#727974] text-center md:text-right max-w-sm">
+          NOTE: Solutions provide information and assistance, rather than replace professional legal advice (Section 29, Advocates Act, 1961).
         </div>
       </div>
     </footer>
