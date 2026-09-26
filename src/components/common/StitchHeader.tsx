@@ -25,12 +25,11 @@ export const StitchHeader: React.FC<StitchHeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { path: 'dashboard', label: 'Dashboard' },
-    { path: 'ai-assistant', label: 'AI Legal Chat' },
-    { path: 'document-vault', label: 'Upload Document' },
-    { path: 'find-counsel', label: 'Find Lawyers' },
-    { path: 'law-library', label: 'Learn Law' },
-    { path: 'legal-updates', label: 'Legal News' },
+    { path: 'dashboard', label: 'Home' },
+    { path: 'ai-assistant', label: 'Understand (AI Assistant)' },
+    { path: 'law-library', label: 'Learn (Duolingo Law)' },
+    { path: 'find-counsel', label: 'Act (Find Lawyers)' },
+    { path: 'legal-updates', label: 'Legal Articles' },
   ];
 
   return (
@@ -57,6 +56,20 @@ export const StitchHeader: React.FC<StitchHeaderProps> = ({
               Private &amp; Secure
             </span>
           </div>
+        </div>
+
+        {/* Core Workflow Stepper (Login -> Home -> Understand -> Learn -> Act) */}
+        <div className="hidden 2xl:flex items-center gap-1.5 px-3 py-1 rounded bg-[#e8f2ea] text-xs text-[#1b382b] font-medium border border-[#c3decb]" title="Hackathon Core Workflow">
+          <span className="font-bold text-[10px] uppercase tracking-wider text-[#142b21]">Workflow:</span>
+          <button onClick={() => onNavigate('login')} className="hover:underline">Login</button>
+          <span>→</span>
+          <button onClick={() => onNavigate('dashboard')} className="hover:underline font-bold">Home</button>
+          <span>→</span>
+          <button onClick={() => onNavigate('ai-assistant')} className="hover:underline font-bold">Understand</button>
+          <span>→</span>
+          <button onClick={() => onNavigate('law-library')} className="hover:underline font-bold">Learn</button>
+          <span>→</span>
+          <button onClick={() => onNavigate('find-counsel')} className="hover:underline font-bold">Act</button>
         </div>
 
         {/* Desktop Navigation */}

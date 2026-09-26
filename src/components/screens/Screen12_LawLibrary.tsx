@@ -1,3 +1,4 @@
+import { LawThroughTime } from '../learn/LawThroughTime';
 import React, { useState } from 'react';
 import { StitchIcon } from '../common/StitchIcon';
 
@@ -28,6 +29,7 @@ export const Screen12_LawLibrary: React.FC<Screen12_LawLibraryProps> = ({
 }) => {
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [showLawThroughTime, setShowLawThroughTime] = useState<boolean>(false);
 
   const tracks = [
     {
@@ -379,7 +381,12 @@ export const Screen12_LawLibrary: React.FC<Screen12_LawLibraryProps> = ({
                   </div>
 
                   {/* Tracks Rendering */}
-                  {filteredTracks.map(track => (
+                  {showLawThroughTime ? (
+                <div className="w-full mb-8">
+                  <LawThroughTime />
+                </div>
+              ) : null}
+              {filteredTracks.map(track => (
                     <article key={track.id} className="p-space-lg rounded bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
                       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
                         <div className="flex items-start gap-space-md">

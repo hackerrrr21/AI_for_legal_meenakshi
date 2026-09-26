@@ -192,7 +192,7 @@ export const Screen04_Dashboard: React.FC<Screen04_DashboardProps> = ({
                 Main Features
               </span>
               <h3 className="font-serif text-xl sm:text-2xl text-[#181d1a] font-semibold">
-                How Can We Help You Today?
+                Four Core Actions: Understand, Learn, Act
               </h3>
             </div>
           </div>
@@ -209,7 +209,7 @@ export const Screen04_Dashboard: React.FC<Screen04_DashboardProps> = ({
                 </div>
                 <div>
                   <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    AI Legal Chat
+                    1. AI Legal Assistant
                   </h4>
                   <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
                     Ask any question about your rights, agreements, or legal disputes in simple words. Works with or without documents.
@@ -240,7 +240,7 @@ export const Screen04_Dashboard: React.FC<Screen04_DashboardProps> = ({
                 </div>
                 <div>
                   <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    Find Lawyers Nearby
+                    2. Find Lawyers Nearby
                   </h4>
                   <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
                     Connect with verified advocates in your area for direct consultation on tenancy, employment, or disputes.
@@ -271,7 +271,7 @@ export const Screen04_Dashboard: React.FC<Screen04_DashboardProps> = ({
                 </div>
                 <div>
                   <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    Legal News &amp; Updates
+                    3. Legal Articles &amp; Updates
                   </h4>
                   <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
                     Easy-to-read guides explaining landmark Supreme Court judgments, tenant rights, and workplace laws.
@@ -302,7 +302,7 @@ export const Screen04_Dashboard: React.FC<Screen04_DashboardProps> = ({
                 </div>
                 <div>
                   <h4 className="font-serif text-base text-[#042217] font-semibold group-hover:text-[#1b382b] transition">
-                    Learn Indian Law
+                    4. Learn Law
                   </h4>
                   <p className="text-xs text-[#424844] mt-1.5 leading-relaxed">
                     Fun, bite-sized lessons explaining the Constitution, police powers, tenant rights, and legal scenarios.
