@@ -7,7 +7,6 @@ export interface BaseScreenProps {
   onNavigate: (path: string) => void;
   userProfile?: UserProfile;
   onQuickLoadSample?: (sampleId: string) => void;
-  [key: string]: any;
 }
 
 export interface ValidationResult {
@@ -15,7 +14,7 @@ export interface ValidationResult {
   error?: string;
 }
 
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
   error?: string;

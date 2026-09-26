@@ -11,19 +11,17 @@ interface Screen05_DocumentVaultProps {
   };
   onQuickLoadSample?: (sampleId: string) => void;
   onCustomDocument?: (title: string, text: string) => void;
-  [key: string]: any;
 }
 
 export const Screen05_DocumentVault: React.FC<Screen05_DocumentVaultProps> = ({
   onNavigate,
-  userProfile = {
+  userProfile: _userProfile = {
     name: "Eleanor Vance",
     role: "Legal Help Account",
     avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
   },
   onQuickLoadSample,
-  onCustomDocument,
-  ...props
+  onCustomDocument
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
@@ -62,8 +60,9 @@ export const Screen05_DocumentVault: React.FC<Screen05_DocumentVaultProps> = ({
           onQuickLoadSample('sample-lease-standard');
         }
       }, 800);
-    } catch (err: any) {
-      setErrorMessage(err.message || 'Error processing file. Please ensure it is a valid PDF, DOCX, or TXT document.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Error processing file. Please ensure it is a valid PDF, DOCX, or TXT document.';
+      setErrorMessage(msg);
     } finally {
       setIsProcessing(false);
       if (fileInputRef.current) fileInputRef.current.value = '';

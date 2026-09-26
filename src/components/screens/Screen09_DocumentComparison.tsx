@@ -13,12 +13,11 @@ interface Screen09_DocumentComparisonProps {
   onQuickLoadSample?: (sampleId: string) => void;
   activeDocText?: string;
   activeDocTitle?: string;
-  [key: string]: any;
 }
 
 export const Screen09_DocumentComparison: React.FC<Screen09_DocumentComparisonProps> = ({
   onNavigate,
-  userProfile,
+  userProfile: _userProfile,
   activeDocText = SAMPLE_DOCUMENTS[0].content,
   activeDocTitle = SAMPLE_DOCUMENTS[0].title
 }) => {

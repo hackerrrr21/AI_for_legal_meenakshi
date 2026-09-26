@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { History, ArrowRight, Sparkles, Scale, BookOpen, AlertCircle, Clock } from 'lucide-react';
+import { History, Sparkles, Scale, Clock } from 'lucide-react';
 import { TIME_COMPARISONS } from '../../data/legalKnowledge';
 
 export const LawThroughTime: React.FC = () => {

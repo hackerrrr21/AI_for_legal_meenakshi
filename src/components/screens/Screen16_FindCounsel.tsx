@@ -16,7 +16,7 @@ interface Screen16_FindCounselProps {
 
 export const Screen16_FindCounsel: React.FC<Screen16_FindCounselProps> = ({
   onNavigate,
-  userProfile,
+  userProfile: _userProfile,
   initialPracticeArea,
   onClearInitialArea
 }) => {

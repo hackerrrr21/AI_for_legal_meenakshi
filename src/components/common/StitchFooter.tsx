@@ -1,5 +1,4 @@
 import React from 'react';
-import { StitchIcon } from './StitchIcon';
 
 interface StitchFooterProps {
   onNavigate: (path: string) => void;

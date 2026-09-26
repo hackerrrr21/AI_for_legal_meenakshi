@@ -4,13 +4,53 @@
  */
 
 // Define SpeechRecognition interface for TypeScript
+interface SpeechRecognitionResultAlternative {
+  transcript: string;
+  confidence: number;
+}
+
+interface SpeechRecognitionResultItem {
+  isFinal: boolean;
+  length: number;
+  [index: number]: SpeechRecognitionResultAlternative;
+}
+
+interface SpeechRecognitionEventLike {
+  resultIndex: number;
+  results: {
+    length: number;
+    [index: number]: SpeechRecognitionResultItem;
+  };
+}
+
+interface SpeechRecognitionErrorEventLike {
+  error: string;
+  message?: string;
+}
+
+interface ISpeechRecognitionInstance {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  start(): void;
+  stop(): void;
+  abort(): void;
+  onresult: ((event: SpeechRecognitionEventLike) => void) | null;
+  onerror: ((event: SpeechRecognitionErrorEventLike) => void) | null;
+  onend: (() => void) | null;
+}
+
+interface SpeechRecognitionConstructor {
+  new (): ISpeechRecognitionInstance;
+}
+
 interface IWindow extends Window {
-  SpeechRecognition?: any;
-  webkitSpeechRecognition?: any;
+  SpeechRecognition?: SpeechRecognitionConstructor;
+  webkitSpeechRecognition?: SpeechRecognitionConstructor;
 }
 
 export class SpeechAssistant {
-  private recognition: any = null;
+  private recognition: ISpeechRecognitionInstance | null = null;
   private isListening: boolean = false;
 
   constructor() {
@@ -44,7 +84,7 @@ export class SpeechAssistant {
       this.stopListening();
     }
 
-    this.recognition.onresult = (event: any) => {
+    this.recognition.onresult = (event: SpeechRecognitionEventLike) => {
       let interim = '';
       let finalTranscript = '';
 
@@ -61,7 +101,7 @@ export class SpeechAssistant {
       onResult(text, isFinal);
     };
 
-    this.recognition.onerror = (event: any) => {
+    this.recognition.onerror = (event: SpeechRecognitionErrorEventLike) => {
       this.isListening = false;
       const errorMap: Record<string, string> = {
         'not-allowed': 'Microphone permission was denied. Please grant permission in your browser settings.',

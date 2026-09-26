@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { StitchIcon } from '../common/StitchIcon';
+import React from 'react';
 
 interface Screen22_TermsCovenantProps {
   onNavigate: (path: string) => void;
@@ -9,19 +8,16 @@ interface Screen22_TermsCovenantProps {
     avatar: string;
   };
   onQuickLoadSample?: (sampleId: string) => void;
-  [key: string]: any;
 }
 
 export const Screen22_TermsCovenant: React.FC<Screen22_TermsCovenantProps> = ({
   onNavigate,
-  userProfile = {
+  userProfile: _userProfile = {
     name: "Eleanor Vance, Esq.",
     role: "Senior Partner, Chancery Practice",
     avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
   },
-  onQuickLoadSample,
-  ...props
-}) => {
+  onQuickLoadSample: _onQuickLoadSample}) => {
   return (
     <div className="w-full bg-surface text-on-surface antialiased min-h-screen">
       <main className="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin flex-1 flex flex-col items-center justify-center"><div className="flex flex-col w-full py-space-sm items-center justify-center">
@@ -145,7 +141,7 @@ export const Screen22_TermsCovenant: React.FC<Screen22_TermsCovenantProps> = ({
 <span className="material-symbols-outlined text-[18px]">download_for_offline</span>
 <span>Download Executed Copy (PDF) • Legal Archive</span>
 </a>
-<button className="flex items-center justify-center gap-space-xs px-6 py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold tracking-wide shadow-md transition-all duration-200 opacity-40 cursor-not-allowed hover:bg-primary-container" disabled={true} id="submitAgreementBtn" onClick={() => {}}>
+<button className="flex items-center justify-center gap-space-xs px-6 py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold tracking-wide shadow-md transition-all duration-200 hover:bg-primary-container" id="submitAgreementBtn" onClick={() => onNavigate('dashboard')}>
 <span>Execute Agreement &amp; Enter AdvoChat</span>
 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
 </button>

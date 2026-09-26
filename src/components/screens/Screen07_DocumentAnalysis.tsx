@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { DocumentAnalysisResult } from '../../types/legal';
+import React from 'react';
 import { StitchIcon } from '../common/StitchIcon';
 
 interface Screen07_DocumentAnalysisProps {
@@ -9,18 +10,17 @@ interface Screen07_DocumentAnalysisProps {
     avatar: string;
   };
   onQuickLoadSample?: (sampleId: string) => void;
-  [key: string]: any;
+  activeAnalysis?: DocumentAnalysisResult | null;
 }
 
 export const Screen07_DocumentAnalysis: React.FC<Screen07_DocumentAnalysisProps> = ({
   onNavigate,
-  userProfile = {
+  userProfile: _userProfile = {
     name: "Eleanor Vance",
     role: "Legal Help Account",
     avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
   },
-  onQuickLoadSample,
-  ...props
+  onQuickLoadSample: _onQuickLoadSample
 }) => {
   return (
     <div className="w-full bg-[#fbf9f5] text-[#181d1a] antialiased min-h-screen">

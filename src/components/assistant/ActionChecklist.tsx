@@ -5,7 +5,6 @@ import {
   Copy, 
   Check, 
   Printer, 
-  Share2, 
   ListOrdered 
 } from 'lucide-react';
 

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { StitchIcon } from '../common/StitchIcon';
 import { askContextQuestion, getEffectiveGeminiKey, setCustomGeminiKey, cleanLegalText } from '../../services/aiService';
 import { DocumentAnalysisResult, RAGChunk } from '../../types/legal';
 
@@ -14,7 +13,6 @@ interface Screen06_AIAssistantProps {
   activeDocText?: string;
   chunks?: RAGChunk[];
   onQuickLoadSample?: (sampleId: string) => void;
-  [key: string]: any;
 }
 
 interface MessageItem {
@@ -118,8 +116,7 @@ export const Screen06_AIAssistant: React.FC<Screen06_AIAssistantProps> = ({
   activeAnalysis = null,
   activeDocText = '',
   chunks = [],
-  onQuickLoadSample,
-  ...props
+  onQuickLoadSample: _onQuickLoadSample
 }) => {
   const [messages, setMessages] = useState<MessageItem[]>([
     {
@@ -516,6 +513,20 @@ Type your question below or click any of the common situations on the left to st
                             <span>{hasApiKey ? 'Gemini Key Saved' : 'Set Gemini Key'}</span>
                           </button>
                         </div>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 px-space-xs">
+                        <span className="text-[10px] uppercase font-bold text-secondary flex-shrink-0">Try asking:</span>
+                        {suggestedInquiries.map((inq, i) => (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => setInputText(inq)}
+                            className="px-2 py-0.5 rounded-full bg-surface-container hover:bg-primary hover:text-white text-[11px] text-primary whitespace-nowrap transition-colors flex-shrink-0"
+                          >
+                            {inq}
+                          </button>
+                        ))}
                       </div>
 
                       <div className="flex items-end gap-space-sm px-space-xs">

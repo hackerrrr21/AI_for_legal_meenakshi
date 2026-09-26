@@ -11,12 +11,11 @@ interface Screen18_LegalUpdatesProps {
   };
   onQuickLoadSample?: (sampleId: string) => void;
   initialTopic?: string;
-  [key: string]: any;
 }
 
 export const Screen18_LegalUpdates: React.FC<Screen18_LegalUpdatesProps> = ({
   onNavigate,
-  userProfile,
+  userProfile: _userProfile,
   initialTopic
 }) => {
   return (

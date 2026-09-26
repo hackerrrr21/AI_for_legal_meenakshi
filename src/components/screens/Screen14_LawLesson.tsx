@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { StitchIcon } from '../common/StitchIcon';
 
 interface Screen14_LawLessonProps {
   onNavigate: (path: string) => void;
@@ -9,19 +8,16 @@ interface Screen14_LawLessonProps {
     avatar: string;
   };
   onQuickLoadSample?: (sampleId: string) => void;
-  [key: string]: any;
 }
 
 export const Screen14_LawLesson: React.FC<Screen14_LawLessonProps> = ({
   onNavigate,
-  userProfile = {
+  userProfile: _userProfile = {
     name: "Eleanor Vance, Esq.",
     role: "Senior Partner, Chancery Practice",
     avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
   },
-  onQuickLoadSample,
-  ...props
-}) => {
+  onQuickLoadSample: _onQuickLoadSample}) => {
   const [activePhase, setActivePhase] = useState<number>(1);
   const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
   const [expandedTerm, setExpandedTerm] = useState<string | null>('term-1');

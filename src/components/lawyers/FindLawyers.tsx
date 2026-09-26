@@ -4,19 +4,14 @@ import {
   MapPin, 
   Star, 
   ShieldCheck, 
-  Phone, 
-  Mail, 
   Calendar, 
-  Filter, 
   Sparkles, 
   CheckCircle2, 
   X,
-  ExternalLink,
-  Award,
   Navigation
 } from 'lucide-react';
 import { LAWYERS_DIRECTORY } from '../../data/lawyerDirectory';
-import { LawyerProfile, LegalPracticeArea } from '../../types/lawyer';
+import { LawyerProfile } from '../../types/lawyer';
 
 interface FindLawyersProps {
   initialPracticeArea?: string;

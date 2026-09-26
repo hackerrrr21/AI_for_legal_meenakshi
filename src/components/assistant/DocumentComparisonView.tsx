@@ -7,7 +7,6 @@ import {
   Plus, 
   Minus, 
   RefreshCw,
-  ArrowRight,
   Sparkles
 } from 'lucide-react';
 import { DocumentComparisonResult } from '../../types/legal';

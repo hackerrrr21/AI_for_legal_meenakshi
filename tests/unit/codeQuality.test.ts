@@ -5,9 +5,12 @@ import {
   formatFileSize, 
   isValidEmail, 
   isValidPhone, 
-  sanitizeUserInput 
+  sanitizeUserInput,
+  escapeHtml,
+  isSafeUrl
 } from '../../src/utils/textSanitizer';
 import { cleanLegalText } from '../../src/services/aiService';
+import { LRUCache, documentChunkCache } from '../../src/utils/cacheManager';
 
 describe('Code Quality: Text Processing & Sanitization Utilities', () => {
   it('cleanDocumentText normalizes line endings and removes trailing spaces', () => {
@@ -24,6 +27,7 @@ describe('Code Quality: Text Processing & Sanitization Utilities', () => {
     expect(truncated.length).toBeLessThan(500);
     expect(truncated).toContain('[...Truncated due to size (500 chars total)...]');
     expect(truncateText('Short text', 100)).toBe('Short text');
+    expect(truncateText('', 100)).toBe('');
   });
 
   it('formatFileSize correctly outputs B, KB, MB, and GB', () => {
@@ -63,6 +67,28 @@ describe('Code Quality: Text Processing & Sanitization Utilities', () => {
     expect(sanitized).toContain('Hello World');
   });
 
+  it('escapeHtml encodes special characters to prevent cross-site scripting (DOM XSS)', () => {
+    const raw = '<div class="alert" onclick="evil(\'attack\')">&warning;</div>';
+    const escaped = escapeHtml(raw);
+    expect(escaped).toContain('&lt;div');
+    expect(escaped).toContain('&gt;');
+    expect(escaped).toContain('&quot;alert&quot;');
+    expect(escaped).toContain('&#039;attack&#039;');
+    expect(escaped).toContain('&amp;warning;');
+    expect(escapeHtml('')).toBe('');
+  });
+
+  it('isSafeUrl prevents execution of dangerous pseudo-protocols', () => {
+    expect(isSafeUrl('https://lawmin.gov.in/acts')).toBe(true);
+    expect(isSafeUrl('http://delhihighcourt.nic.in')).toBe(true);
+    expect(isSafeUrl('/dashboard')).toBe(true);
+    expect(isSafeUrl('javascript:alert(document.cookie)')).toBe(false);
+    expect(isSafeUrl('data:text/html,<script>alert(1)</script>')).toBe(false);
+    expect(isSafeUrl('vbscript:msgbox("malicious")')).toBe(false);
+    expect(isSafeUrl('file:///etc/passwd')).toBe(false);
+    expect(isSafeUrl('')).toBe(false);
+  });
+
   it('cleanLegalText removes raw markdown symbols while preserving readability and clean bullets', () => {
     const rawLegalMarkdown = "### Title Heading\n\n**Important:** You have rights.\n* Point 1\n* Point 2\n// Internal comment\n---";
     const cleaned = cleanLegalText(rawLegalMarkdown);
@@ -74,5 +100,19 @@ describe('Code Quality: Text Processing & Sanitization Utilities', () => {
     expect(cleaned).toContain('Important: You have rights.');
     expect(cleaned).toContain('• Point 1');
     expect(cleaned).toContain('• Point 2');
+  });
+
+  it('documentChunkCache and LRUCache manage memory safely with bounded size', () => {
+    const customCache = new LRUCache<string, string>(10, 60000);
+    expect(customCache.size()).toBe(0);
+
+    for (let i = 0; i < 20; i++) {
+      customCache.set(`key-${i}`, `value-${i}`);
+    }
+
+    expect(customCache.size()).toBe(10);
+    expect(customCache.get('key-0')).toBeUndefined();
+    expect(customCache.get('key-19')).toBe('value-19');
+    expect(documentChunkCache.getMetrics().capacity).toBe(50);
   });
 });

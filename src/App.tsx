@@ -47,7 +47,7 @@ export const App: React.FC = () => {
   });
 
   const [userXP, setUserXP] = useState<number>(450);
-  const [streakDays, setStreakDays] = useState<number>(5);
+  const [streakDays] = useState<number>(5);
   const [activeAnalysis, setActiveAnalysis] = useState<DocumentAnalysisResult | null>(null);
   const [activeDocText, setActiveDocText] = useState<string>('');
   const [chunks, setChunks] = useState<RAGChunk[]>([]);

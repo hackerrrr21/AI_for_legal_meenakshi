@@ -2,19 +2,17 @@ import React, { useState } from 'react';
 import { 
   FileText, 
   Search, 
-  BookOpen, 
   Clock, 
   ExternalLink, 
   Bookmark, 
   BookmarkCheck, 
-  Share2, 
   X,
   Sparkles,
   ShieldCheck,
   Building2
 } from 'lucide-react';
 import { LEGAL_ARTICLES, ARTICLE_CATEGORIES } from '../../data/articlesData';
-import { LegalArticle, ArticleCategory } from '../../types/article';
+import { LegalArticle } from '../../types/article';
 
 interface LegalArticlesProps {
   initialTopic?: string;

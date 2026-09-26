@@ -9,7 +9,6 @@ interface Screen20_UserProfileProps {
     avatar: string;
   };
   onQuickLoadSample?: (sampleId: string) => void;
-  [key: string]: any;
 }
 
 export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
@@ -19,9 +18,7 @@ export const Screen20_UserProfile: React.FC<Screen20_UserProfileProps> = ({
     role: "Corporate Counsel & Senior VP Regulatory Affairs",
     avatar: "https://lh3.googleusercontent.com/aida/AEtjO1VZ6niDg1iYJjzr8mamLG9LUlOY0DheFbkbsj_qFZ_em-hwpS5pR8HxexUHNsxBUU1KbvoavawfJL7Kqr2SGC8nvYMB8p59tFnVkvnMjxP9m-dFrwqWag5quL6TKHeF9gLmB4Wjv_lgfjRu7ikPMOxecC93rpNQMrES01oEIGgdvp3ZatJuZXkL_LW-DVh1rWd3hPSNvL5uJH5h2Xn8HBhTSGpaLeYgjNGwiZXPZXqP_ZCroml37gUCOw9i"
   },
-  onQuickLoadSample,
-  ...props
-}) => {
+  onQuickLoadSample: _onQuickLoadSample}) => {
   const [activeTab, setActiveTab] = useState<'profile' | 'credentials' | 'activity'>('profile');
   const [showComplianceDetails, setShowComplianceDetails] = useState<boolean>(false);
   const [showEditModal, setShowEditModal] = useState<boolean>(false);

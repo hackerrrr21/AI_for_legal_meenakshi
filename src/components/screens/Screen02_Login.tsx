@@ -1,8 +1,9 @@
+import { UserProfile } from '../../types/user';
 import React, { useState } from 'react';
 import { StitchIcon } from '../common/StitchIcon';
 
 interface Screen02LoginProps {
-  onLoginSuccess?: (userProfile: any) => void;
+  onLoginSuccess?: (userProfile: UserProfile) => void;
   onGoToSSO?: () => void;
   onBackToSplash?: () => void;
   onNavigate?: (path: string) => void;
@@ -49,7 +50,7 @@ export const Screen02_Login: React.FC<Screen02LoginProps> = ({
     }
   ];
 
-  const handleLogin = (persona: any) => {
+  const handleLogin = (persona: UserProfile) => {
     if (onLoginSuccess) {
       onLoginSuccess(persona);
     } else if (onNavigate) {
@@ -317,6 +318,15 @@ export const Screen02_Login: React.FC<Screen02LoginProps> = ({
           >
             <span>Sign In to AdvoChat</span>
             <StitchIcon name="arrow_forward" className="text-[16px]" />
+          </button>
+
+          <button
+            type="button"
+            onClick={handleSSO}
+            className="w-full py-2.5 px-3 rounded border border-[#c2c8c2] bg-[#f0f5f0] hover:bg-[#e2ddd5] text-[#042217] font-semibold text-xs transition flex items-center justify-center gap-2"
+          >
+            <StitchIcon name="domain" className="text-[16px]" />
+            <span>Institutional SSO / Bar ID Login</span>
           </button>
         </form>
 

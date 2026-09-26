@@ -1,6 +1,6 @@
+import { DocumentAnalysisResult } from '../../types/legal';
 import React from 'react';
 import { ActionChecklist } from '../assistant/ActionChecklist';
-import { SAMPLE_DOCUMENTS } from '../../data/sampleDocuments';
 import { StitchIcon } from '../common/StitchIcon';
 
 interface Screen10_ActionCenterProps {
@@ -11,13 +11,12 @@ interface Screen10_ActionCenterProps {
     avatar: string;
   };
   onQuickLoadSample?: (sampleId: string) => void;
-  activeAnalysis?: any;
-  [key: string]: any;
+  activeAnalysis?: DocumentAnalysisResult | null;
 }
 
 export const Screen10_ActionCenter: React.FC<Screen10_ActionCenterProps> = ({
   onNavigate,
-  userProfile,
+  userProfile: _userProfile,
   activeAnalysis
 }) => {
   const defaultChecklist = [

@@ -1,6 +1,5 @@
 import { LawThroughTime } from '../learn/LawThroughTime';
 import React, { useState } from 'react';
-import { StitchIcon } from '../common/StitchIcon';
 
 interface Screen12_LawLibraryProps {
   onNavigate: (path: string) => void;
@@ -12,20 +11,18 @@ interface Screen12_LawLibraryProps {
   userXP?: number;
   streakDays?: number;
   onQuickLoadSample?: (sampleId: string) => void;
-  [key: string]: any;
 }
 
 export const Screen12_LawLibrary: React.FC<Screen12_LawLibraryProps> = ({
   onNavigate,
-  userProfile = {
+  userProfile: _userProfile = {
     name: "Eleanor Vance, Esq.",
     role: "Senior Partner, Chancery Practice",
     avatar: "https://lh3.googleusercontent.com/aida/AEtjO1WlU_rw8DW14ePf9q8MQWTke2j0pNm1YeOMuhBZGVunSymAVfpxgz-yr1chhiSxsKYAYSmR27oadJaQQFRopIikAfqaxn8tvo1M3rXh0l465oXi1f8P4Iolrg_nyEdmVXx7ONK7niyl56GgQl_s35G3QDQL06zg3xtoZchdeCZWMGwkWRJx8LPmSe52dm0CIOgY-ApY7qm1qadIWC-xcxvr2Kar2Qo-F-VzSKc7GalR1mQh97r-2OEtqruR"
   },
   userXP = 450,
   streakDays = 12,
-  onQuickLoadSample,
-  ...props
+  onQuickLoadSample: _onQuickLoadSample
 }) => {
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -374,9 +371,19 @@ export const Screen12_LawLibrary: React.FC<Screen12_LawLibraryProps> = ({
                       <h2 className="font-headline-md text-headline-md font-serif text-primary">Foundational &amp; Advanced Codices</h2>
                       <p className="font-body-sm text-body-sm text-secondary">Accredited Indian legal curriculum covering constitutional, criminal, and commercial law</p>
                     </div>
-                    <div className="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary">
-                      <span>Tracks available:</span>
-                      <span className="font-semibold text-on-surface">{filteredTracks.length}</span>
+                    <div className="flex items-center gap-space-sm font-label-sm text-label-sm text-secondary">
+                      <button
+                        type="button"
+                        onClick={() => setShowLawThroughTime(prev => !prev)}
+                        className={`px-3 py-1 rounded-full text-xs font-semibold border transition ${
+                          showLawThroughTime
+                            ? 'bg-primary text-white border-primary'
+                            : 'bg-surface-container text-primary border-outline/30 hover:bg-surface-container-high'
+                        }`}
+                      >
+                        {showLawThroughTime ? 'Hide Evolution Timeline' : '⚖️ Law Through Time (Then vs Now)'}
+                      </button>
+                      <span>Tracks: <strong className="text-on-surface">{filteredTracks.length}</strong></span>
                     </div>
                   </div>
 

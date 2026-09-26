@@ -13,14 +13,12 @@ export const Screen01_Splash: React.FC<Screen01SplashProps> = ({
   onNavigate 
 }) => {
   const [progress, setProgress] = useState(35);
-  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setIsReady(true);
           return 100;
         }
         return prev + 25;

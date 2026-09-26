@@ -1,4 +1,4 @@
-import { LegalArticle, ArticleCategory } from '../types/article';
+import { LegalArticle } from '../types/article';
 
 export const LEGAL_ARTICLES: LegalArticle[] = [
   {

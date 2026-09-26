@@ -9,8 +9,7 @@ import { DocumentAnalysisResult, ClauseItem, ObligationItem, KeyDateAmountItem, 
 import { ChatMessage, Citation } from '../types/chat';
 import { sanitizeUntrustedContent, wrapInSecurityEnvelopes } from '../utils/promptInjectionDefense';
 import { redactPII } from '../utils/piiRedactor';
-import { globalChatRateLimiter } from '../utils/rateLimiter';
-import { chunkLegalDocument, retrieveRelevantChunks, formatCitations, getIndianLegalCorpusChunks } from './ragService';
+import { retrieveRelevantChunks, formatCitations, getIndianLegalCorpusChunks } from './ragService';
 
 const GEMINI_API_KEY = (import.meta.env.VITE_GEMINI_API_KEY as string) || '';
 
@@ -135,7 +134,11 @@ Core Indian Legal Grounds to apply when relevant:
 Include a simple note at the end:
 (Note: AdvoChat provides helpful educational legal information, not formal attorney representation.)`;
 
-      const contentsPayload: any[] = [];
+      interface GeminiPayloadItem {
+        role: 'user' | 'model';
+        parts: { text: string }[];
+      }
+      const contentsPayload: GeminiPayloadItem[] = [];
       if (previousMessages && previousMessages.length > 0) {
         previousMessages.slice(-4).forEach(m => {
           if (m.sender === 'user' || m.sender === 'assistant') {
@@ -521,6 +524,12 @@ function generateSmartFollowUps(question: string, doc?: DocumentAnalysisResult |
       'How does the 1930 Cyber Helpline freeze stolen money?',
       'What is the RBI zero-liability rule for bank fraud?',
       'What is Section 318 BNS for online cheating?'
+    ];
+  } else if (doc && doc.clauses && doc.clauses.length > 0) {
+    return [
+      `What are my key obligations under the ${doc.clauses[0].title}?`,
+      'Are there any high-risk clauses in this document?',
+      'What questions should I ask a lawyer before signing?'
     ];
   }
   return [

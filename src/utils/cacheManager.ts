@@ -4,6 +4,8 @@
  * Fully type-safe and zero external runtime dependencies.
  */
 
+import { RAGChunk } from '../types/legal';
+
 export interface CacheMetrics {
   hits: number;
   misses: number;
@@ -89,9 +91,16 @@ export class LRUCache<K, V> {
   }
 }
 
+
+export interface QuerySearchResult {
+  chunk: RAGChunk;
+  score: number;
+  snippet: string;
+}
+
 // Global specialized cache singletons
-export const documentChunkCache = new LRUCache<string, any>(50, 60 * 60 * 1000);
-export const queryResultCache = new LRUCache<string, any>(200, 30 * 60 * 1000);
+export const documentChunkCache = new LRUCache<string, RAGChunk[]>(50, 60 * 60 * 1000);
+export const queryResultCache = new LRUCache<string, QuerySearchResult[]>(200, 30 * 60 * 1000);
 
 export function clearAllCaches(): void {
   documentChunkCache.clear();

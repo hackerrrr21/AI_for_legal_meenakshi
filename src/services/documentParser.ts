@@ -6,7 +6,27 @@ import mammoth from 'mammoth';
 import { cleanDocumentText } from '../utils/textSanitizer';
 
 // Dynamically load pdfjs to keep bundle flexible
-let pdfjsLib: any = null;
+interface PDFTextItem {
+  str?: string;
+  [key: string]: unknown;
+}
+
+interface PDFPageProxy {
+  getTextContent(): Promise<{ items: (PDFTextItem | unknown)[] }>;
+}
+
+interface PDFDocumentProxy {
+  numPages: number;
+  getPage(pageNumber: number): Promise<PDFPageProxy>;
+}
+
+interface PDFJSStatic {
+  GlobalWorkerOptions?: { workerSrc?: string };
+  version?: string;
+  getDocument(src: { data: ArrayBuffer }): { promise: Promise<PDFDocumentProxy> };
+}
+
+let pdfjsLib: PDFJSStatic | null = null;
 
 async function getPdfJs() {
   if (!pdfjsLib) {
@@ -61,12 +81,12 @@ export async function parseUploadedFile(file: File): Promise<ParsedDocument> {
         const page = await pdf.getPage(pageNum);
         const textContent = await page.getTextContent();
         const pageString = textContent.items
-          .map((item: any) => item.str || '')
+          .map((item: unknown) => (typeof item === 'object' && item !== null && 'str' in item ? String((item as { str: string }).str) : ''))
           .join(' ');
         pageTexts.push(pageString);
       }
       extractedText = pageTexts.join('\n\n--- Page Break ---\n\n');
-    } catch (pdfErr: any) {
+    } catch (pdfErr: unknown) {
       console.warn('PDF.js worker extraction fallback:', pdfErr);
       // Fallback: extract plaintext strings from buffer if worker failed
       const buffer = await file.arrayBuffer();

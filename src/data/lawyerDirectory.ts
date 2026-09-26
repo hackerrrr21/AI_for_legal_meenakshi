@@ -1,4 +1,4 @@
-import { LawyerProfile, LegalPracticeArea } from '../types/lawyer';
+import { LawyerProfile } from '../types/lawyer';
 
 export const LAWYERS_DIRECTORY: LawyerProfile[] = [
   {
