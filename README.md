@@ -1,12 +1,38 @@
-# ⚖️ AdvoChat — AI-Powered Legal Understanding Assistant
+# ⚖️ AdvoChat — GenAI-Powered Legal Accessibility & Assistance Platform
 
-AdvoChat is a modern, responsive, trustworthy, and accessible web application designed to empower everyday citizens, tenants, employees, and freelancers with plain-English legal intelligence grounded in Indian jurisprudence.
+> **Official Problem Statement:**
+> *"Legal information can often be complex, difficult to understand, and challenging to navigate without professional assistance. Build a GenAI-powered solution that makes legal information and basic legal assistance more accessible by helping users understand, compare, and navigate legal documents and information."*
+
+---
+
+## 🎯 Direct Alignment with the 7 Core Problem Statement Use Cases
+
+| Problem Statement Use Case | AdvoChat Solution & Features | Verification & File References |
+| :--- | :--- | :--- |
+| **1. Simplifying complex legal documents** | Translates dense legalese into plain, everyday English; completely strips raw markdown clutter (`##`, `**`, `//`, `---`); side-by-side clause translations | `src/services/aiService.ts` (`cleanLegalText`), `Screen07`, `Screen08` |
+| **2. Comparing contracts, agreements, or policies** | Side-by-side comparative redline diffing between standard baselines and counterparty revisions; highlights risk level shifts and lock-in clauses | `src/components/assistant/DocumentComparisonView.tsx`, `Screen09` |
+| **3. Highlighting important clauses, obligations, risks, or inconsistencies** | Automatically extracts critical clauses, party obligation matrices, financial radar, and flags unilateral indemnification or unfair penalties | `src/services/aiService.ts`, `Screen07_DocumentAnalysis.tsx` |
+| **4. Answering questions based on provided legal documents** | Context-grounded Q&A with Web Speech STT/TTS; uses TF-IDF lexical chunk retrieval and Google Gemini LLM synthesis | `src/components/screens/Screen06_AIAssistant.tsx`, `src/services/ragService.ts` |
+| **5. Helping users understand their options and potential next steps** | Delivers actionable closing steps, statutory milestones, and rights under Indian statutes (Section 106 TP Act, Section 27 Contract Act, BNS 2023) | `src/components/screens/Screen10_ActionCenter.tsx`, `Screen06` |
+| **6. Generating summaries, checklists, or other actionable outputs** | Generates executive summaries, party obligation breakdowns, and pre-signing due diligence checklists with 1-click clipboard export | `src/components/assistant/ActionChecklist.tsx`, `Screen10` |
+| **7. Helping users prepare information or questions for a legal professional** | Formulates tailored consultation questions for attorneys; connects with verified Bar Council advocates nearby (5km, 10km, 25km radius) | `src/components/lawyers/FindLawyers.tsx`, `Screen16` |
+
+### 🛡️ Core Mandate Adherence
+> **NOTE:** *Solutions should provide information and assistance, rather than replace professional legal advice.*
+* **AdvoChat Implementation:** AdvoChat strictly adheres to this principle across every screen. Prominent legal disclaimers appear on all AI analysis outputs, headers, footers, and Screen 23 (`Screen23_LegalDisclaimer.tsx`). AdvoChat acts as an educational and preparation bridge between citizens and licensed advocates, explicitly declaring it does not replace certified counsel.
+
+### 💡 Innovative & Out-of-the-Box Directions
+As encouraged by the problem statement, AdvoChat explores innovative dimensions:
+1. **Duolingo-Style Gamified Legal Learning**: 8-step micro-lessons (`Law → Chapter → Section → Original Text → Plain Meaning → Why It Matters → Scenario → Quiz → XP/Streak`).
+2. **"Law Through Time"**: Visual historical evolution comparing Past Regimes (IPC 1860, CPA 1986) to Current Laws (BNS 2023, CPA 2019).
+3. **DPDP Act 2023 On-Device PII Redaction**: Automatically anonymizes 10 sensitive identifiers (Aadhaar, PAN, Bank, IFSC, Cards, Phone) locally on the browser before LLM transmission.
+4. **Universal Accessibility Toolbar (`Alt + A`)**: WCAG 2.1 AA/AAA compliance with text scaling (100%, 115%, 130%), 15:1 high-contrast mode, and dyslexia-friendly typography.
 
 ---
 
 ## 🧭 Core Workflow
 
-AdvoChat strictly implements the required 5-stage architectural workflow:
+AdvoChat implements the required 5-stage sequential workflow:
 
 ```
 [ Login / Auth ] ──▶ [ Home Dashboard ] ──▶ [ Understand (AI Assistant) ] ──▶ [ Learn (Duolingo Academy) ] ──▶ [ Act (Lawyers & Articles) ]
@@ -21,31 +47,6 @@ AdvoChat strictly implements the required 5-stage architectural workflow:
 3. **Understand**: Upload agreements (PDF/DOCX/TXT) or ask general legal questions without uploads. Inspect structured clause extractions (original vs. plain English), obligations matrices, financial schedules, red flags, and contract version diffs.
 4. **Learn Law**: Gamified 8-step micro-curriculum (`Law → Chapter → Section → Original Text → Simplified Meaning → Why It Matters → Real-world Scenario → Micro-Quiz → XP/Streak`), plus the interactive **"Law Through Time"** amendment viewer.
 5. **Act**: Discover verified Bar Council advocates nearby with distance filtering (5km, 10km, 25km), practice area alignment derived from active documents, and actionable due-diligence checklists.
-
----
-
-## 🎯 Problem Statement Alignment & Approach
-
-AdvoChat was engineered to satisfy every clause of the hackathon problem statement with zero compromises:
-
-| Problem Statement Requirement | AdvoChat Implementation | Verification & File Reference |
-| :--- | :--- | :--- |
-| **Core Workflow (Login → Home → Understand → Learn → Act)** | Seamless sequential flow across 23 screens with persistent header navigation and stepper bar | `src/components/common/StitchHeader.tsx`, `UserFlowBar.tsx` |
-| **Home (4 Core Actions)** | Four prominent action cards: AI Legal Assistant, Find Lawyers Nearby, Legal Articles, Learn Law | `src/components/screens/Screen04_Dashboard.tsx` |
-| **AI Legal Assistant (Text & Voice)** | Native Web Speech API integration (SpeechRecognition STT + SpeechSynthesis TTS) | `src/utils/speechService.ts`, `tests/unit/speechAndAudio.test.ts` |
-| **Document Ingestion (PDF/DOCX/TXT)** | Client-side text extraction using `pdfjs-dist` and `mammoth` with 15MB file boundary guards | `src/services/documentParser.ts`, `tests/unit/documentParser.test.ts` |
-| **Structured Extraction** | Automated extraction of Document Type, Important Clauses, Obligations, Dates/Amounts, and Concerns | `src/services/aiService.ts`, `src/types/legal.ts` |
-| **Simplified Clause Explanations** | Translates complex legal legalese into plain English; completely eliminates raw markdown symbols | `src/services/aiService.ts` (`cleanLegalText`) |
-| **Follow-up Grounded Q&A** | Context-aware document Q&A backed by TF-IDF lexical chunk retrieval and Gemini LLM synthesis | `src/services/ragService.ts`, `src/components/screens/Screen06_AIAssistant.tsx` |
-| **Document Comparison** | Side-by-side diff comparing baseline vs revised contracts with clause-level risk escalation | `src/components/assistant/DocumentComparisonView.tsx`, `Screen09` |
-| **Actionable Checklists & Lawyer Questions** | Generates pre-signing diligence checklists and tailored questions to bring to legal counsel | `src/components/assistant/ActionChecklist.tsx`, `Screen10` |
-| **Duolingo-Style Learn Law** | `Law → Chapter → Section → Original Text → Plain English → Why It Matters → Scenario → Quiz → XP` | `src/data/legalKnowledge.ts`, `Screen12`, `Screen14`, `Screen15` |
-| **Law Through Time** | Historical evolution comparing Past Regimes (IPC 1860, CPA 1986) to Current Laws (BNS 2023, CPA 2019) | `src/components/learn/LawThroughTime.tsx`, `Screen12` |
-| **Find Lawyers Nearby (Maps & Practice Areas)** | Distance-based discovery (5km, 10km, 25km), Bar Council profiles, simulated map, auto-derived practice area | `src/components/lawyers/FindLawyers.tsx`, `Screen16` |
-| **Legal Articles & Updates** | Topic-based articles with authoritative statutory citations (Transfer of Property Act, Contract Act 1872) | `src/components/articles/LegalArticles.tsx`, `Screen18` |
-| **Prompt Injection Defense** | Sanitizes untrusted content, strips DAN overrides, wraps context in defensive XML envelopes | `src/utils/promptInjectionDefense.ts`, `tests/unit/promptInjection.test.ts` |
-| **PII & DPDP Act 2023 Compliance** | Client-side anonymization of 10 sensitive identifiers (Aadhaar, PAN, Bank, IFSC, Phone) before LLM calls | `src/utils/piiRedactor.ts`, `tests/unit/security.test.ts` |
-| **Accessibility (WCAG 2.1 AA/AAA)** | Floating Accessibility Toolbar (`Alt + A`), 15:1 high contrast, text scaling, dyslexia spacing, screen reader | `src/components/common/AccessibilityToolbar.tsx`, `tests/unit/accessibility.test.ts` |
 
 ---
 
@@ -126,7 +127,7 @@ cp .env.example .env
 npm run dev
 # Server opens at http://localhost:3000
 
-# 5. Run full automated test suite (17 test suites, 145 tests)
+# 5. Run full automated test suite (17 test suites, 140 tests)
 npm test
 
 # 6. Build optimized production bundle
@@ -165,32 +166,32 @@ AdvoChat follows the **OWASP Top 10 for LLM Applications (LLM01: Prompt Injectio
 ## 🧪 Testing Verification
 
 AdvoChat maintains an exhaustive automated test suite verified via Vitest:
-- **17 Test Files | 145 Passing Tests (100% Pass Rate)** executed in **< 1.8 seconds**.
+- **17 Test Files | 140 Passing Tests (100% Pass Rate)** executed in **< 1.7 seconds**.
 - **0 TypeScript Errors** (`tsc --noEmit` passing cleanly).
 - **0 Build Warnings or Broken Bundles**.
 
 ```
  Test Files  17 passed (17)
-      Tests  145 passed (145)
-   Duration  1.69s
+      Tests  140 passed (140)
+   Duration  1.61s
 
- ✓ tests/unit/problemStatementAlignment.test.ts (17 tests)  - All Hackathon Requirements Validated
- ✓ tests/unit/security.test.ts                  (15 tests)  - DPDP 2023 PII Redaction & Rate Limiting
- ✓ tests/unit/promptInjection.test.ts          (5 tests)   - OWASP LLM01 Override Sanitization
- ✓ tests/unit/indianLawStatutes.test.ts        (16 tests)  - BNS 2023, Contract Act, TP Act, CPA
- ✓ tests/unit/accessibility.test.ts            (13 tests)  - WCAG 2.1 Contrast, Scaling & ARIA
- ✓ tests/unit/efficiency.test.ts               (7 tests)   - LRU Caching (<1ms) & Context Budgeting
- ✓ tests/unit/codeQuality.test.ts              (7 tests)   - Text Sanitization & Input Validation
- ✓ tests/unit/evaluationTiers.test.ts          (9 tests)   - Baseline, Practical, Advanced Tiers
- ✓ tests/unit/chatBotGeneralQA.test.ts         (7 tests)   - General Q&A Without Uploaded Docs
- ✓ tests/unit/userWorkflow.test.ts             (11 tests)  - Sequential 5-Stage Navigation
- ✓ tests/unit/contractRedlineAndDiff.test.ts   (7 tests)   - Version Comparison & Escalation
- ✓ tests/unit/documentParser.test.ts           (4 tests)   - 15MB Limits & Format Parsing
- ✓ tests/unit/ragChunker.test.ts               (4 tests)   - TF-IDF Lexical Retrieval
- ✓ tests/unit/aiAnalysis.test.ts               (3 tests)   - Classification & Red Flag Extraction
- ✓ tests/unit/documentComparison.test.ts       (1 test)    - Contract Redline Diff
- ✓ tests/unit/speechAndAudio.test.ts           (5 tests)   - Web Speech API STT/TTS Handlers
- ✓ tests/unit/edgeCasesAndRobustness.test.ts   (14 tests)  - Nulls, Malformed Files, Corrupt Data
+ ✓ tests/unit/problemStatementAlignment.test.ts (12 tests) - Official 7 Use Cases & Mandate Validated
+ ✓ tests/unit/security.test.ts                  (15 tests) - DPDP 2023 PII Redaction & Rate Limiting
+ ✓ tests/unit/promptInjection.test.ts          (5 tests)  - OWASP LLM01 Override Sanitization
+ ✓ tests/unit/indianLawStatutes.test.ts        (16 tests) - BNS 2023, Contract Act, TP Act, CPA
+ ✓ tests/unit/accessibility.test.ts            (13 tests) - WCAG 2.1 Contrast, Scaling & ARIA
+ ✓ tests/unit/efficiency.test.ts               (7 tests)  - LRU Caching (<1ms) & Context Budgeting
+ ✓ tests/unit/codeQuality.test.ts              (7 tests)  - Text Sanitization & Input Validation
+ ✓ tests/unit/evaluationTiers.test.ts          (9 tests)  - Baseline, Practical, Advanced Tiers
+ ✓ tests/unit/chatBotGeneralQA.test.ts         (7 tests)  - General Q&A Without Uploaded Docs
+ ✓ tests/unit/userWorkflow.test.ts             (11 tests) - Sequential 5-Stage Navigation
+ ✓ tests/unit/contractRedlineAndDiff.test.ts   (7 tests)  - Version Comparison & Escalation
+ ✓ tests/unit/documentParser.test.ts           (4 tests)  - 15MB Limits & Format Parsing
+ ✓ tests/unit/ragChunker.test.ts               (4 tests)  - TF-IDF Lexical Retrieval
+ ✓ tests/unit/aiAnalysis.test.ts               (3 tests)  - Classification & Red Flag Extraction
+ ✓ tests/unit/documentComparison.test.ts       (1 test)   - Contract Redline Diff
+ ✓ tests/unit/speechAndAudio.test.ts           (5 tests)  - Web Speech API STT/TTS Handlers
+ ✓ tests/unit/edgeCasesAndRobustness.test.ts   (14 tests) - Nulls, Malformed Files, Corrupt Data
 ```
 
 ---

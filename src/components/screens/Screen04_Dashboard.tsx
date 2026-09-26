@@ -90,6 +90,49 @@ export const Screen04_Dashboard: React.FC<Screen04_DashboardProps> = ({
           </div>
         </div>
 
+        {/* Problem Statement Alignment Ribbon: Understand, Compare, Navigate */}
+        <div className="bg-[#f0f5f0] border border-[#d2e2d5] rounded-xl p-4 shadow-sm">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[11px] uppercase tracking-wider text-[#142b21] font-bold flex items-center gap-1.5">
+              <StitchIcon name="auto_awesome" className="text-[15px] text-[#1b382b]" />
+              <span>GenAI Legal Intelligence: Understand • Compare • Navigate</span>
+            </span>
+            <span className="text-[11px] text-[#506358] font-medium hidden sm:inline">
+              Information &amp; Assistance Platform
+            </span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 text-center text-xs">
+            <button onClick={() => onNavigate('document-analysis')} className="p-2 rounded bg-white border border-[#e2ddd5] hover:border-[#1b382b] transition flex flex-col items-center gap-1">
+              <StitchIcon name="description" className="text-[18px] text-[#1b382b]" />
+              <span className="font-semibold text-[#181d1a] text-[11px]">Simplify Docs</span>
+            </button>
+            <button onClick={() => onNavigate('doc-comparison')} className="p-2 rounded bg-white border border-[#e2ddd5] hover:border-[#1b382b] transition flex flex-col items-center gap-1">
+              <StitchIcon name="compare_arrows" className="text-[18px] text-[#1b382b]" />
+              <span className="font-semibold text-[#181d1a] text-[11px]">Compare Versions</span>
+            </button>
+            <button onClick={() => onNavigate('clause-inspector')} className="p-2 rounded bg-white border border-[#e2ddd5] hover:border-[#1b382b] transition flex flex-col items-center gap-1">
+              <StitchIcon name="rule" className="text-[18px] text-[#1b382b]" />
+              <span className="font-semibold text-[#181d1a] text-[11px]">Highlight Clauses</span>
+            </button>
+            <button onClick={() => onNavigate('ai-assistant')} className="p-2 rounded bg-white border border-[#e2ddd5] hover:border-[#1b382b] transition flex flex-col items-center gap-1">
+              <StitchIcon name="chat" className="text-[18px] text-[#1b382b]" />
+              <span className="font-semibold text-[#181d1a] text-[11px]">Answer Questions</span>
+            </button>
+            <button onClick={() => onNavigate('action-center')} className="p-2 rounded bg-white border border-[#e2ddd5] hover:border-[#1b382b] transition flex flex-col items-center gap-1">
+              <StitchIcon name="navigation" className="text-[18px] text-[#1b382b]" />
+              <span className="font-semibold text-[#181d1a] text-[11px]">Next Steps</span>
+            </button>
+            <button onClick={() => onNavigate('action-center')} className="p-2 rounded bg-white border border-[#e2ddd5] hover:border-[#1b382b] transition flex flex-col items-center gap-1">
+              <StitchIcon name="checklist" className="text-[18px] text-[#1b382b]" />
+              <span className="font-semibold text-[#181d1a] text-[11px]">Checklists</span>
+            </button>
+            <button onClick={() => onNavigate('find-counsel')} className="p-2 rounded bg-white border border-[#e2ddd5] hover:border-[#1b382b] transition flex flex-col items-center gap-1">
+              <StitchIcon name="person_search" className="text-[18px] text-[#1b382b]" />
+              <span className="font-semibold text-[#181d1a] text-[11px]">Prepare for Counsel</span>
+            </button>
+          </div>
+        </div>
+
         {/* Quick Search / Ask AI Question Box */}
         <div className="rounded-xl bg-white p-5 sm:p-6 shadow-sm border border-[#e2ddd5]">
           <form onSubmit={handleAskQuickQuestion} className="flex flex-col sm:flex-row items-center gap-3">
